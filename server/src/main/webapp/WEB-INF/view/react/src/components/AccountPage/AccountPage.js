@@ -1,6 +1,7 @@
 import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } from "react-bootstrap";
 import { useState } from "react";
 import ListItem from "./ListItem";
+import CreateGroupModal from "../CreateGroupModal";
 
 export default function AccountPage() {
     const [user, setUser] = useState(temporaryUser)
@@ -9,6 +10,14 @@ export default function AccountPage() {
 
     const [show, setShow] = useState(false);
     const [modalEvent, setModalEvent] = useState();
+
+    const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
+    function handleShowCreateGroupModal() {
+        setShowCreateGroupModal(true)
+    }
+    function handleHideCreateGroupModal() {
+        setShowCreateGroupModal(false)
+    }
 
     function handleClose() {
         setShow(false)
@@ -55,7 +64,7 @@ export default function AccountPage() {
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="success">Create Group</Button>
+                                    <Button variant="success" onClick={handleShowCreateGroupModal}>Create Group</Button>
                                     <Button variant="primary">Find More Groups</Button>
                                 </Card.ImgOverlay>
                             </Card>
@@ -77,6 +86,7 @@ export default function AccountPage() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <CreateGroupModal show={showCreateGroupModal} handleClose={handleHideCreateGroupModal} />
         </Container>
     )
 }

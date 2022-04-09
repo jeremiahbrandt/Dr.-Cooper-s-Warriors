@@ -1,17 +1,21 @@
 package com.drcooperswarriors.codeathon.config;
 
+import com.drcooperswarriors.codeathon.payload.response.JwtResponse;
 import com.drcooperswarriors.codeathon.security.CustomOAuth2User;
+import com.drcooperswarriors.codeathon.security.JwtUtils;
 import com.drcooperswarriors.codeathon.service.CustomOAuth2UserService;
 import com.drcooperswarriors.codeathon.service.UserDetailsServiceImpl;
 import com.drcooperswarriors.codeathon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
 import org.springframework.security.config.annotation.web.configuration.*;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -20,12 +24,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public UserService userService;
+
+    @Autowired
+    JwtUtils jwtUtils;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -63,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login")
                 .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/",true)
+                .defaultSuccessUrl("http://localhost:3000/",true)
                 .failureUrl("/login?error=true")
                 .and()
                 .oauth2Login()
@@ -72,13 +80,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .successHandler(new AuthenticationSuccessHandler() {
                     @Override
-                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                                        Authentication authentication) throws IOException, ServletException {
-
+                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
                         CustomOAuth2User oauthUser = (CustomOAuth2User) authentication.getPrincipal();
-
                         userService.processOAuthPostLogin(oauthUser.getEmail());
-                        response.sendRedirect("/index.html");
+                        String jwt = jwtUtils.generateJwtToken(authentication);
+                        String token = (new JwtResponse(jwt, new Long(1), oauthUser.getEmail(), oauthUser.getName(), new ArrayList<>())).getAccessToken();
+                        System.out.println(token);
+                        response.sendRedirect("http://localhost:3000/");
                     }
                 });
     }

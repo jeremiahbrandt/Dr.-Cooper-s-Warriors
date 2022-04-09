@@ -25,7 +25,8 @@ export default function Registration() {
 
                 <Row className="google-holder">
                     <div className='button-Google' >
-                            <button type="submit" className="app-signIn">Sign In with Google</button>
+                        <a href="http://localhost:8080/test">Test</a>
+                            <button type="submit" href="http://localhost:8080/login/oauth2/code/google" className="app-signIn">Sign In with Google</button>
                     </div>
                 </Row>
 
