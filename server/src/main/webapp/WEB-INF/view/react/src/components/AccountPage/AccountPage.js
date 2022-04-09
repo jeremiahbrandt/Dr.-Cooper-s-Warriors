@@ -1,6 +1,7 @@
 import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } from "react-bootstrap";
 import { useState } from "react";
 import ListItem from "./ListItem";
+import "./Account.css";
 
 export default function AccountPage() {
     const [user, setUser] = useState(temporaryUser)
@@ -55,7 +56,7 @@ export default function AccountPage() {
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="success">Create Group</Button>
+                                    <Button variant="success">Create Group</Button> 
                                     <Button variant="primary">Find More Groups</Button>
                                 </Card.ImgOverlay>
                             </Card>
@@ -65,9 +66,17 @@ export default function AccountPage() {
             </Row>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{modalEvent}</Modal.Title>
+                    <Modal.Title>
+                        {modalEvent}
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+                    <p className="time-date"><b>Event Info: </b>{modalEvent}</p>
+                    <p className="location"><b>Event Location: </b>{modalEvent}</p>
+                    <p className="description"><b>Description: </b>{modalEvent}</p>
+                    <h5 className="num-inter">People interested:{modalEvent}</h5>
+                </Modal.Body>
+
                 <Modal.Footer className="d-flex justify-content-between">
                     <Button variant="danger" onClick={handleClose}>
                         Cancel Reservation
