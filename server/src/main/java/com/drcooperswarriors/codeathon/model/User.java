@@ -11,13 +11,45 @@ public class User {
     @Id
     @OneToOne
     @Column(name = "user_id")
-<<<<<<< HEAD
 
     private String username;
     private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     private String role;
     private boolean enabled;
-=======
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     private int user_id;
     @Column(name = "email")
     private String email;
@@ -31,8 +63,6 @@ public class User {
     private String image_url;
     @Column(name = "registeredAccount_date")
     private Date registeredAccount_date;
->>>>>>> 82e9a36b3622e15bec450f93177ffedc55d65ab1
-
     @Enumerated(EnumType.STRING)
     private Provider provider;
 
