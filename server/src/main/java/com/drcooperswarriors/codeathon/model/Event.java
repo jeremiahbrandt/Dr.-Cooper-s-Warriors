@@ -63,18 +63,5 @@ public class Event {
         this.address = address;
     }
 
-    public int getgroup_id() {
-        return group_id;
-    }
-    public void setgroup_id(int group_id) {
-        this.group_id = group_id;
-    }
-
-    public double getcat_id() {
-        return cat_id;
-    }
-    public void setcat_id(int cat_id) {
-        this.cat_id = cat_id;
-    }
 
 }
