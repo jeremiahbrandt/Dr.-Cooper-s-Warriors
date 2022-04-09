@@ -1,9 +1,13 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Groups from './components/Groups';
 import Events from './components/Events';
+import AccountPage from "./AccountPage";
+import Registration from './RegistrationPage';
+
 
 function App() {
   return (
@@ -11,12 +15,11 @@ function App() {
       <Router>
       <Navbar />
       <Routes>
-        <Route path='/' exact component={Home} />
-        <Route path='/Groups' component={Groups} />
-        <Route path='/Events' component={Events} />
+        <Route path='/' exact element={<AccountPage />} />
+        <Route path='/Groups' element={<Groups />} />
+        <Route path='/Events' element={<Events />} />
       </Routes>
     </Router>
-
     </div>
   );
 }
