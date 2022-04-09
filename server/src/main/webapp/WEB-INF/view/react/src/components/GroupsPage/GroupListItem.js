@@ -36,14 +36,14 @@ export default function GroupListItem(props) {
                 <Row>
                     <Col>
                         <Row>
-                            <h3 className="d-flex align-items-center">{props.item.name}<Badge pill bg={getBadgeBackgroundColor()} style={{fontSize: '11px', marginLeft: '10px'}}>{props.item.category}</Badge></h3>
+                            <h3 className="d-flex align-items-center">{props.item.name}<Badge pill bg={getBadgeBackgroundColor()} style={{ fontSize: '11px', marginLeft: '10px' }}>{props.item.category}</Badge></h3>
                         </Row>
                         <Row>
                             <p>{props.item.description}</p>
                         </Row>
                     </Col>
                     <Col xs={3} className="d-flex align-items-center">
-                        <Image style={{ width: '100%' }} src={props.item.imageUrl} />
+                        <Image style={{width: '140px' }} src={props.item.imageUrl} />
                     </Col>
                 </Row>
             </Container>

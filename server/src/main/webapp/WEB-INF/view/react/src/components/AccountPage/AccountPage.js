@@ -50,7 +50,7 @@ export default function AccountPage() {
                         <Card.Header as="h5">Your Groups</Card.Header>
                         <Card.Body>
                             <ListGroup style={{ height: '400px', overflowY: 'scroll' }}>
-                                {events.map((event, index) => <ListItem item={event} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleShow} />)}
+                                {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleGroupClick} />)}
                             </ListGroup>
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px' }} variant="top" src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" />
