@@ -17,9 +17,10 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/account' element={<AccountPage />} />
-        <Route path='/Groups' element={<GroupsPage />} />
+        <Route path='/Groups' element={<GroupsPage />} />>
         <Route path='/Events' element={<Events />} />
-        <Route path='/AccountPage' exact element={<AccountPage />} />
+        <Route path='/Register' element={<Registration />} />
+        <Route path='/Account' element={<AccountPage />} />
       </Routes>
     </Router>
     </div>
