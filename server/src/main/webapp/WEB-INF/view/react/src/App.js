@@ -18,6 +18,7 @@ function App() {
         <Route path='/' exact element={<AccountPage />} />
         <Route path='/Groups' element={<Groups />} />
         <Route path='/Events' element={<Events />} />
+        <Route path='/RegistrationPage' element={<Registration />} />
       </Routes>
     </Router>
     </div>
