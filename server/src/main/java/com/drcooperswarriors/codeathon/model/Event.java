@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Event {
 
     @Id
-
     @Column(name = "event_id")
     private int event_id;
 
@@ -25,7 +24,9 @@ public class Event {
     @Column(name = "name", nullable = false)
     private String name;
 
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cat_id", referencedColumnName = "cat_id")
+    private Categories categories;
 
 
 
