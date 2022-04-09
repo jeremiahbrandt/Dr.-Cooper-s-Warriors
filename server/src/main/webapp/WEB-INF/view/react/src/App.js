@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 import Groups from './components/Groups';
 import Events from './components/Events';
 import AccountPage from "./AccountPage";
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route path='/' exact element={<AccountPage />} />
         <Route path='/Groups' element={<Groups />} />
