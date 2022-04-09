@@ -11,6 +11,14 @@ export default function AccountPage() {
     const [show, setShow] = useState(false);
     const [modalEvent, setModalEvent] = useState();
 
+    const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
+    function handleShowCreateGroupModal() {
+        setShowCreateGroupModal(true)
+    }
+    function handleHideCreateGroupModal() {
+        setShowCreateGroupModal(false)
+    }
+
     function handleClose() {
         setShow(false)
     }
@@ -86,6 +94,7 @@ export default function AccountPage() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <CreateGroupModal show={showCreateGroupModal} handleClose={handleHideCreateGroupModal} />
         </Container>
     )
 }
