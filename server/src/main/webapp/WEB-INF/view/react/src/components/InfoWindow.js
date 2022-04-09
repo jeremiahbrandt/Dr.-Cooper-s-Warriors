@@ -5,7 +5,8 @@ const InfoWindow = (props) => {
     return (
     <div className="infoWindow">
     <Container>
-    <div style={{marginTop: 5, marginBottom: 30}}>
+    <button className="close-btn" onClick={() => props.setTrigger(false)}>X</button>
+    <div style={{marginTop: 30, marginBottom: 30, padding: 10}}>
       <h3>Look at Nick's Kayak</h3>
       <div>Category: Leisure</div>
       <div>Address: Nick's House</div>
