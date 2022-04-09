@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Card, ListGroup } from "react-bootstrap"
+import { Card, Container, ListGroup } from "react-bootstrap"
 import GroupListItem from "./GroupListItem"
 import CatBox from "../CatBox"
 import { useGroups } from "../../hooks/useGroups"
@@ -8,8 +8,8 @@ export default function GroupsPage() {
     const { filters, groups, handleClick, toggleFilter } = useGroups()
 
     return (
-        <div>
-            <Card>
+        <Container >
+            <Card > 
                 <Card.Header as="h5">Find Groups</Card.Header>
                 <Card.Body>
                     <CatBox
@@ -21,6 +21,6 @@ export default function GroupsPage() {
                     </ListGroup>
                 </Card.Body>
             </Card>
-        </div>
+        </Container>
     )
 }

@@ -37,7 +37,7 @@ export default function AccountPage() {
                                 {events.map((event, index) => <ListItem item={event} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleShow} />)}
                             </ListGroup>
                             <Card style={{ marginTop: '20px' }}>
-                                <Card.Img style={{ height: '200px' }} variant="top" src="generic-event.jpg" />
+                                <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-event.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
                                     <Button variant="primary">Find More Events</Button>
                                 </Card.ImgOverlay>
@@ -53,7 +53,7 @@ export default function AccountPage() {
                                 {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleGroupClick} />)}
                             </ListGroup>
                             <Card style={{ marginTop: '20px' }}>
-                                <Card.Img style={{ height: '200px' }} variant="top" src="generic-group.jpg" />
+                                <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
                                     <Button variant="success">Create Group</Button>
                                     <Button variant="primary">Find More Groups</Button>
