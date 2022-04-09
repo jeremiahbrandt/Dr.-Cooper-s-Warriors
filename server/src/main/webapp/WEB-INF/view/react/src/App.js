@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import TestComponent from "./TestComponent";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          <TestComponent />
+          Hello World!
         </a>
       </header>
     </div>

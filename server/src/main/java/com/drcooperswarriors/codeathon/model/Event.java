@@ -27,11 +27,11 @@ public class Event {
 
     @OneToMany
     @JoinColumn(name = "group_id")
-    private groups group_id;
+    private Group group_id;
 
     @OneToOne
     @JoinColumn(name = "cat_id.categories")
-    private categories id;
+    private Categories id;
 
 
     //getters and setters
