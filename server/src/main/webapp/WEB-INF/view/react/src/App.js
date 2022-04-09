@@ -1,13 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
-import RegistrationPage from "./RegistrationPage";
-import AccountPage from './AccountPage';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import Groups from './components/Groups';
+import Events from './components/Events';
 
 function App() {
   return (
     <div className="App">
-      <RegistrationPage />
+      <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/Groups' component={Groups} />
+        <Route path='/Events' component={Events} />
+      </Switch>
+    </Router>
+
     </div>
   );
 }
