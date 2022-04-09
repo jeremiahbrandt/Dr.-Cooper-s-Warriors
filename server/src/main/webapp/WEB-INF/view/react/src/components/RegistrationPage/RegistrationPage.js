@@ -10,6 +10,11 @@ export default function Registration() {
         // TODO: Call api
         // axios.post(/api/)
     }
+    async function handleLoginClick() {
+        await axios.get('http://localhost:8080/login').then(res => {
+            console.log(res)
+        })
+    }
 
     return (
         <Container className='w-50'>
@@ -25,8 +30,9 @@ export default function Registration() {
 
                 <Row className="google-holder">
                     <div className='button-Google' >
-                        <a href="http://localhost:8080/test">Test</a>
-                            <button type="submit" href="http://localhost:8080/login/oauth2/code/google" className="app-signIn">Sign In with Google</button>
+                        <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=752684579731-51ocrrorqh65rjvdh7mmg9kqrsj7i68q.apps.googleusercontent.com&scope=email%20profile&state=6twNhAwqXHpUEsnRp3Xm0UcFPVOLpDbTWrccgHXoMN0%3D&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth2%2Fcode%2Fgoogle&flowName=GeneralOAuthFlow">Link</a>
+                        <Button onClick={handleLoginClick}>Login Button</Button>
+                            {/* <button type="submit" href="http://localhost:8080/login/oauth2/code/google" className="app-signIn">Sign In with Google</button> */}
                     </div>
                 </Row>
 

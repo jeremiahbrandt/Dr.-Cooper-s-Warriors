@@ -2,6 +2,7 @@ import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } fr
 import { useState } from "react";
 import ListItem from "./ListItem";
 import CreateGroupModal from "../CreateGroupModal";
+import axios from "axios";
 
 export default function AccountPage() {
     const [user, setUser] = useState(temporaryUser)
@@ -32,6 +33,10 @@ export default function AccountPage() {
         window.location.href = `/groups/${group}`;
     }
 
+    async function handleFindMoreEvents() {
+        await axios.get('http://localhost:8080/api/test')
+    }
+
     return (
         <Container>
             <Row>
@@ -48,7 +53,7 @@ export default function AccountPage() {
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-event.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="primary">Find More Events</Button>
+                                    <Button variant="primary" onClick={handleFindMoreEvents}>Find More Events</Button>
                                 </Card.ImgOverlay>
                             </Card>
                         </Card.Body>

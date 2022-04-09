@@ -14,6 +14,7 @@ import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
 import org.springframework.security.config.annotation.web.configuration.*;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
@@ -61,11 +62,50 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//        // Enable CORS and disable CSRF
+//        http = http.cors().and().csrf().disable();
+//
+//        // Set session management to stateless
+//        http = http
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and();
+//
+//        // Set unauthorized requests exception handler
+//        http = http
+//                .exceptionHandling()
+//                .authenticationEntryPoint(
+//                        (request, response, ex) -> {
+//                            response.sendError(
+//                                    HttpServletResponse.SC_UNAUTHORIZED,
+//                                    ex.getMessage()
+//                            );
+//                        }
+//                )
+//                .and();
+//
+//        // Set permissions on endpoints
+//        http.authorizeRequests()
+//                // Our public endpoints
+//                .antMatchers("/api/public/**").permitAll()
+//                .antMatchers(HttpMethod.GET, "/api/author/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/api/author/search").permitAll()
+//                .antMatchers(HttpMethod.GET, "/api/book/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/api/book/search").permitAll()
+//                // Our private endpoints
+//                .anyRequest().authenticated();
+//
+//        // Add JWT token filter
+//        http.addFilterBefore(
+//                jwtTokenFilter,
+//                UsernamePasswordAuthenticationFilter.class
+//        );
+
         http.csrf().disable().authorizeRequests()
                 //...
                 .antMatchers(
                         HttpMethod.GET,
-                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico")
+                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/login/oauth2/code/google")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -86,6 +126,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         String jwt = jwtUtils.generateJwtToken(authentication);
                         String token = (new JwtResponse(jwt, new Long(1), oauthUser.getEmail(), oauthUser.getName(), new ArrayList<>())).getAccessToken();
                         System.out.println(token);
+                        response.setHeader("Authorization", token);
                         response.sendRedirect("http://localhost:3000/");
                     }
                 });
