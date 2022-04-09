@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login")
                 .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/index.html",true)
+                .defaultSuccessUrl("/",true)
                 .failureUrl("/login?error=true")
                 .and()
                 .oauth2Login()
@@ -78,7 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         CustomOAuth2User oauthUser = (CustomOAuth2User) authentication.getPrincipal();
 
                         userService.processOAuthPostLogin(oauthUser.getEmail());
-                        response.sendRedirect("/index.html");
+                        response.sendRedirect("/");
                     }
                 });
     }

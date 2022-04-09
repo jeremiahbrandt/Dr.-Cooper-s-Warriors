@@ -7,7 +7,7 @@ public class EventParticipants {
 
     @Id
     @Column(name = "event_participant_id")
-    private int event_participant_id;
+    private Long event_participant_id;
 
     @ManyToOne
     @JoinColumn(name="event_id", nullable = false)
@@ -17,11 +17,11 @@ public class EventParticipants {
     @JoinColumn(name="user_id", nullable = false)
     private User user;
 
-    public int getEvent_participant_id() {
+    public Long getEvent_participant_id() {
         return event_participant_id;
     }
 
-    public void setEvent_participant_id(int event_participant_id) {
+    public void setEvent_participant_id(Long event_participant_id) {
         this.event_participant_id = event_participant_id;
     }
 

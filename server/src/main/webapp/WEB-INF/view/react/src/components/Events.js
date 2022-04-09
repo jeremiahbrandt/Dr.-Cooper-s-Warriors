@@ -16,7 +16,7 @@ function Events(props){
             lat: 39.0997,
             lng: -94.578331
           }}
-          defaultZoom={12}
+          defaultZoom={10}
         >
           <Marker
                 lat={ 39.045142}
