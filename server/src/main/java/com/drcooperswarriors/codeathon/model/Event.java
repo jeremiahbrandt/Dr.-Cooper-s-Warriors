@@ -25,13 +25,8 @@ public class Event {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "group_id")
-    private Group group_id;
 
-    @OneToOne
-    @JoinColumn(name = "cat_id.categories")
-    private Categories id;
+
 
 
     //getters and setters

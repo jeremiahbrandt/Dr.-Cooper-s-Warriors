@@ -9,8 +9,8 @@ import java.util.Date;
 @Table(name = "users")
 public class User {
     @Id
-    @OneToOne
     @Column(name = "user_id")
+    private int user_id;
 
     private String username;
     private String password;
@@ -51,7 +51,6 @@ public class User {
     }
 
 
-    private int user_id;
     @Column(name = "email")
     private String email;
     @Column(name = "first_name")

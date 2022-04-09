@@ -4,7 +4,6 @@ import javax.persistence.*;
 @Table(name = "eventParticipants")
 public class Categories {
     @Id
-    @ManyToMany
     @Column(name = "id")
     private int id;
     @Column(name = "name")

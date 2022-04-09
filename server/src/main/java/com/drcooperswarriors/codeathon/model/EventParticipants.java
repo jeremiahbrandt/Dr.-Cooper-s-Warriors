@@ -5,10 +5,10 @@ import javax.persistence.*;
 @Table(name = "eventParticipants")
 public class EventParticipants {
     @Id
-    @OneToOne
+
     @Column(name = "event_id")
     private int event_id;
-    @OneToOne
+
     @Column(name = "user_id")
     private int user_id;
     public int getEvent_id(){
