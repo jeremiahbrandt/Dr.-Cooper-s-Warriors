@@ -24,48 +24,44 @@ export default function Registration() {
                 </Col>
 
                 <Row className="google-holder">
-                <div className='button-Google' >
-                        <button type="submit" className="app-signIn"> Sign In with Google</button>
-                </div>
+                    <div className='button-Google' >
+                            <button type="submit" className="app-signIn">Sign In with Google</button>
+                    </div>
                 </Row>
 
                 <Row className="dash-holder">
                     <h1 className="dashline">or</h1>
-                    <Form.Label className='dashline-under'>Sign up with your email</Form.Label>
+                    <label className='dashline-under'>Sign up with your email</label>
                 </Row>
                 
                 <Col className="mb-3-holder">
                     <Row className="mb-3" controlId="registrationFormFirstName">
-                        <Form.Label>First name</Form.Label>
+                        <label>First name</label>
                         <Form.Control type="text" placeholder="Enter first name" />
                     </Row>
                     <Row className="mb-3" controlId="registrationFormLasttName">
-                        <Form.Label>Last name</Form.Label>
+                        <label>Last name</label>
                         <Form.Control type="text" placeholder="Enter last name" />
                     </Row>
                     <Row className="mb-3" controlId="registrationFormEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <label>Email address</label>
                         <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
+                        <text className="text-muted">
                         We'll never share your email with anyone else.
-                        </Form.Text>
+                        </text>
                     </Row>
                     <Row className="mb-3" controlId="registrationFormPassword">
-                        <Form.Label>Password</Form.Label>
+                        <label>Password</label>
                         <Form.Control type="password" placeholder="Password" />
                     </Row>
                     <Row className="mb-3" controlId="registrationFormBirthday">
-                        <Form.Label>Date of Birth</Form.Label>
+                        <label>Date of Birth</label>
                         <Form.Control type="date" name='date_of_birth' />
                     </Row>
                     <Button className="register-button" variant="primary" type="submit">
                         Submit
                     </Button>
                 </Col>
-            
-                <Row className="sub_button">
-                    
-                </Row>
                 
             </Row>
         </Container>
