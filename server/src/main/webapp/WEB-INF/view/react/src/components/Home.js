@@ -26,7 +26,7 @@ function Home() {
         </Row>
       </Container>
       <div>
-        <button className="home-button"><Link as={Link} style={{ textDecoration: 'none', color: 'black' }}to="/Register">Groups</Link></button>
+        <button className="home-button"><Link as={Link} style={{ textDecoration: 'none', color: 'black' }}to="/Register">GetStarted</Link></button>
         
       </div>
     </div>
