@@ -11,6 +11,13 @@ public class User {
     @Id
     @OneToOne
     @Column(name = "user_id")
+<<<<<<< HEAD
+
+    private String username;
+    private String password;
+    private String role;
+    private boolean enabled;
+=======
     private int user_id;
     @Column(name = "email")
     private String email;
@@ -24,6 +31,7 @@ public class User {
     private String image_url;
     @Column(name = "registeredAccount_date")
     private Date registeredAccount_date;
+>>>>>>> 82e9a36b3622e15bec450f93177ffedc55d65ab1
 
     @Enumerated(EnumType.STRING)
     private Provider provider;
