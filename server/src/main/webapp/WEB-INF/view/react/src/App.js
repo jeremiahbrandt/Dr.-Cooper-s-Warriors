@@ -9,6 +9,7 @@ import Registration from './components/RegistrationPage/RegistrationPage';
 import GroupsPage from './components/GroupsPage/GroupsPage';
 import Footer from './components/Footer';
 import GroupPage from './components/GroupPage/GroupPage';
+import CreateGroupModal from './components/CreateGroupModal';
 
 
 function App() {
