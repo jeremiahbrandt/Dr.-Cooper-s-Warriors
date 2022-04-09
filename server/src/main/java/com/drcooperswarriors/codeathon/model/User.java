@@ -50,6 +50,7 @@ public class User {
         return username;
     }
 
+
     private int user_id;
     @Column(name = "email")
     private String email;
