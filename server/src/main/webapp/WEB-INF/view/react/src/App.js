@@ -7,6 +7,7 @@ import Events from './components/Events';
 import AccountPage from "./components/AccountPage/AccountPage";
 import Registration from './components/RegistrationPage/RegistrationPage';
 import GroupsPage from './components/GroupsPage/GroupsPage';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/Register' element={<Registration />} />
         <Route path='/Account' element={<AccountPage />} />
       </Routes>
+      <Footer />
     </Router>
     </div>
   );
