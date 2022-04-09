@@ -1,6 +1,5 @@
 import react from 'react';
 import styled from 'styled-components'
-import Posts from './Posts';
 
 export default function Post(props){
     return(
