@@ -4,7 +4,8 @@ import Posts from './Posts'
 import styled from "styled-components"
 
 
-export default function groupPage(){
+export default function groupPage(props){
+    console.log(props);
     return(
         
     <Container>
@@ -14,6 +15,7 @@ export default function groupPage(){
             <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35"/>
         </Image>
         </Flex>
+        {/* <Bio as="p">{}</Bio> */}
         <Bio as="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus. Amet purus massa accumsan in. Facilisis nec aliquet ac nulla. Odio et eros, pretium lacus, nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus. </Bio>
         <Push>
             <Button variant="primary" type="submit">Create Event</Button>
