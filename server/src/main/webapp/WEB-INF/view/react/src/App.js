@@ -5,7 +5,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Groups from './components/Groups';
 import Events from './components/Events';
-import AccountPage from "./AccountPage";
+import AccountPage from "./components/AccountPage/AccountPage";
 import Registration from './RegistrationPage';
 
 
