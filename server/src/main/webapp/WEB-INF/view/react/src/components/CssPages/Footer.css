@@ -1,12 +1,12 @@
 .footer-container{
-    margin-top: 7%;
+    margin-top: 10%;
     background:#f8f9fa;
     height:5rem;
     
 }
 .footer {
     margin-top: 30rem;
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
     height:20rem;   /* Height of the footer */

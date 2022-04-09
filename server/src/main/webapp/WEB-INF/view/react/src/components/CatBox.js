@@ -1,34 +1,24 @@
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import './CatBox.css'
 
-function CatBox(){
+function CatBox(props) {
+    const { filters, toggleFilter, checked } = props
+    function handleClick(e) {
+        toggleFilter(e.target.value)
+    }
 
-    return(
+    return (
         <Container>
-        <Row>
-            <form>
-                <label className='catLabel'>
-                    Physical:
-                    <input className='catInput' type="checkbox" id='physical' value='physical' />
-                </label>
-                <label className='catLabel'>
-                    Leisure:
-                    <input className='catInput' type="checkbox" id='leisure' value='leisure' />
-                </label>
-                <label className='catLabel'>
-                    Arts and Crafts:
-                    <input className='catInput' type="checkbox" id='art' value='art' />
-                </label>
-                <label className='catLabel'>
-                    Games:
-                    <input  className='catInput' type="checkbox" id='games' value='games' />
-                </label>
-                <label className='catLabel'>
-                    Nature:
-                    <input  className='catInput' type="checkbox" id='nature' value='nature' />
-                </label>
-            </form>
-        </Row>
+            <Row>
+                <form>
+                    {filters.map((filter, index) => (
+                        <label className='catLabel'>
+                            {filter.name}
+                            <input className='catInput' type="checkbox" id='physical' value={filter.value} onClick={handleClick} checked={filter.checked} />
+                        </label>
+                    ))}
+                </form>
+            </Row>
         </Container>
     )
 
