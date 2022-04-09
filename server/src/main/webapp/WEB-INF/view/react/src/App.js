@@ -8,7 +8,7 @@ import AccountPage from "./components/AccountPage/AccountPage";
 import Registration from './components/RegistrationPage/RegistrationPage';
 import GroupsPage from './components/GroupsPage/GroupsPage';
 import Footer from './components/Footer';
-import GroupPage from './GroupPage';
+import GroupPage from './components/GroupPage/GroupPage';
 
 
 function App() {
