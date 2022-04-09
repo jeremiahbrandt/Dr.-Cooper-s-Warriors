@@ -7,6 +7,7 @@ import Events from './components/Events';
 import AccountPage from "./components/AccountPage/AccountPage";
 import Registration from './RegistrationPage';
 import GroupsPage from './components/GroupsPage/GroupsPage';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -17,11 +18,12 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/account' element={<AccountPage />} />
-        <Route path='/Groups' element={<GroupsPage />} />>
+        <Route path='/Groups' element={<GroupsPage />} />
         <Route path='/Events' element={<Events />} />
         <Route path='/Register' element={<Registration />} />
         <Route path='/Account' element={<AccountPage />} />
       </Routes>
+      <Footer />
     </Router>
     </div>
   );
