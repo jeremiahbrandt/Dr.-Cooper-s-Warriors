@@ -5,7 +5,7 @@
 }
 
 .form-holder {
-    background-color: #a6dbee;
+    background-color: #BDDFEB;
     padding: 1%;
     margin-top: 2%;
     margin-left: 2%;
@@ -38,10 +38,14 @@
     color: black;
 }
 
+.text-muted {
+    color: white;
+}
+
 .mb-3-holder {
     margin-left: .5%;
     width: 95%;
-    background-color: #2596be;
+    background-color: #a6dbee;
     padding: 2%;
 }
 
@@ -49,6 +53,10 @@
     width: 75%;
     margin-left: 10%;
     
+}
+
+.google-holder {
+    padding: 5%;
 }
 
 .dashline-under {
