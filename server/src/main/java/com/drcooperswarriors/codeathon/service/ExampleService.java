@@ -1,7 +1,5 @@
 package com.drcooperswarriors.codeathon.service;
 
-import com.drcooperswarriors.codeathon.model.ExampleModel;
-import com.drcooperswarriors.codeathon.repository.ExampleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -34,5 +34,7 @@
     box-shadow: 0 0 12px #bdbdbd !important;
     border: none !important;
     border-radius: .5rem !important;
+    cursor: default;
+    text-decoration:none;
 }
 
