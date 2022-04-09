@@ -4,7 +4,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 import {  Link } from "react-router-dom";
 const NavBar= () =>{
   return (
-  <div className="container-fluid">
+  <div>
     <Navbar bg="light" expand="lg">
       <Container>
       <Navbar.Brand as={Link} to="/">CoolApp</Navbar.Brand>
