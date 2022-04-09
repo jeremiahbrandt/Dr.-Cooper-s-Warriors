@@ -22,7 +22,9 @@ export default function Post(props){
 
 const Container = styled.div`
     display: flex;
+    &:not(:last-of-type){
     border-bottom: 2px solid rgb(196, 196, 196);
+    }
 `
 
 const Flex = styled.div`
@@ -38,7 +40,10 @@ const Image = styled.div`
     padding: 1rem; 
 `
 const Body = styled.div`
-    padding-top: 20px;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 40px;
     line-height: 1.25em;
     `
 
