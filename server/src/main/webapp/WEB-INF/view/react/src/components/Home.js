@@ -25,7 +25,7 @@ function Home() {
         </Row>
       </Container>
       <div>
-        <button className="button">Get Started</button>
+        <button href="./register" className="home-button">Get Started</button>
       </div>
     </div>
   );

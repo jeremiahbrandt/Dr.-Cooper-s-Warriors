@@ -9,6 +9,7 @@
     width: 100%;
     height: 100% ;
     background-color:#ffffff;
+    border-radius: .75em .75em .75em .75em;
 }
 .text-box{
     margin: 0% 0% 5% 0%;
@@ -23,13 +24,15 @@
 }
 .img-box{
     background-color:#BDDFEB;
+    border-radius: 0em .75em .75em 0em;
 }
-.button{
+.home-button{
     margin: 2% 0% 0% 0%;
     width: 40%;
     height: 8rem;
     background-color:#BDDFEB;
-    box-shadow: 0 0 12px #bdbdbd;
-    border-radius: 5%;
+    box-shadow: 0 0 12px #bdbdbd !important;
+    border: none !important;
+    border-radius: .5rem !important;
 }
 
