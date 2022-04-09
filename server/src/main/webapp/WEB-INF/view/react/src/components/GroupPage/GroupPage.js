@@ -1,6 +1,6 @@
 import React from "react"
 import Button from 'react-bootstrap/Button'
-import Posts from './components/Posts'
+import Posts from './Posts'
 import styled from "styled-components"
 
 
