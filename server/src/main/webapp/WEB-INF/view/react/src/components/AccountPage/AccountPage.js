@@ -1,5 +1,4 @@
-import { Col, Row, Container, Card, Button, Modal, ListGroupItem } from "react-bootstrap";
-import { ListGroup } from "react-bootstrap";
+import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } from "react-bootstrap";
 import { useState } from "react";
 import ListItem from "./ListItem";
 
@@ -51,7 +50,7 @@ export default function AccountPage() {
                         <Card.Header as="h5">Your Groups</Card.Header>
                         <Card.Body>
                             <ListGroup style={{ height: '400px', overflowY: 'scroll' }}>
-                                {events.map((event, index) => <ListItem item={event} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleShow} />)}
+                                {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleGroupClick} />)}
                             </ListGroup>
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px' }} variant="top" src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" />
@@ -65,21 +64,6 @@ export default function AccountPage() {
                                 </Row>
                             </Card>
                         </Card.Body>
-                        {/* <Card.Body>
-                            <ListGroup style={{ height: '500px', overflowY: 'scroll' }}>
-                                {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'light' : 'info'} onClick={handleGroupClick} />)}
-                            </ListGroup>
-                            <Container>
-                                <Row>
-                                    <Col>
-                                        <Button variant="success">Create Group</Button>
-                                    </Col>
-                                    <Col>
-                                        <Button variant="primary">Find More Groups</Button>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Card.Body> */}
                     </Card>
                 </Col>
             </Row>
