@@ -1,0 +1,21 @@
+.infoWindow{
+    position: 'relative';
+    bottom: 150;
+    left: '-45px';
+    width: 200px;
+    height: 20vh;
+    transform: translate3d(-50%, -100%, 0);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 30%);
+}
+.close-btn{
+    background-color: red !important;
+    font-size: 1.5vh;
+    color: white;
+    border: 0ch;
+    position: fixed;
+    right: 1%;
+    top: 1%;
+    border-radius: 5%;
+}
