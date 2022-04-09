@@ -6,6 +6,7 @@ import com.drcooperswarriors.codeathon.service.UserDetailsServiceImpl;
 import com.drcooperswarriors.codeathon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.*;
 import org.springframework.security.config.annotation.authentication.builders.*;
 import org.springframework.security.config.annotation.web.builders.*;
@@ -52,11 +53,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/", "/login", "/oauth/**").permitAll()
+        http.csrf().disable().authorizeRequests()
+                //...
+                .antMatchers(
+                        HttpMethod.GET,
+                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().permitAll()
+                .formLogin().loginPage("/login")
+                .loginProcessingUrl("/perform_login")
+                .defaultSuccessUrl("/homepage.html",true)
+                .failureUrl("/login?error=true")
                 .and()
                 .oauth2Login()
                 .userInfoEndpoint()
@@ -70,7 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         CustomOAuth2User oauthUser = (CustomOAuth2User) authentication.getPrincipal();
 
                         userService.processOAuthPostLogin(oauthUser.getEmail());
-                        response.sendRedirect("/app");
+                        response.sendRedirect("/index.html");
                     }
                 });
     }
