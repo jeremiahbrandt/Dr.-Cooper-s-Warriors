@@ -33,9 +33,9 @@ export default function groupPage(){
 }
 
 const Container = styled.div`
-    padding: 10px;
-    margin: 20px;
-    font-size: 1.2em;
+    width:60%;
+    margin: 0 auto;
+    font-size: 1em;
 `
 const Flex = styled.div`
     flex-direction: column;
