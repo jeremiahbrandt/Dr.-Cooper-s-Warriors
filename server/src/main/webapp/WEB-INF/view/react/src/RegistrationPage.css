@@ -1,0 +1,90 @@
+.w-50 {
+    margin: 50px auto;
+
+    max-width: 500px;
+}
+
+.form-holder {
+    background-color: #a6dbee;
+    padding: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+
+    width: 95%;
+
+    box-shadow: 0 0 5px gray;
+
+    animation-name: fadeIn;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+.text-intro-top {
+    display: block;
+    margin-right: 60%;
+
+    font-size: 225%;
+}
+
+.text-intro-sub {
+    display: block;
+    margin-right: 60%;
+
+    font-size: 120%;
+}
+
+.text-intro-top,
+.text-intro-sub {
+    color: black;
+}
+
+.mb-3-holder {
+    margin-left: .5%;
+    width: 95%;
+    background-color: #2596be;
+    padding: 2%;
+}
+
+.mb-3 {
+    width: 75%;
+    margin-left: 10%;
+    
+}
+
+.dashline-under {
+    margin-top: 1%;
+}
+
+.dashline {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 100%;
+}
+  
+  .dashline:before,
+  .dashline:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 23%;
+}
+
+.register-button {
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 50%;
+
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity:1
+    }
+  }

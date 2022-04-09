@@ -4,23 +4,40 @@ import javax.persistence.*;
 @Entity
 @Table(name = "eventParticipants")
 public class EventParticipants {
+
     @Id
+    @Column(name = "event_participant_id")
+    private int event_participant_id;
 
-    @Column(name = "event_id")
-    private int event_id;
+    @ManyToOne
+    @JoinColumn(name="event_id", nullable = false)
+    private Event event;
 
-    @Column(name = "user_id")
-    private int user_id;
-    public int getEvent_id(){
-        return event_id;
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
+    private User user;
+
+    public int getEvent_participant_id() {
+        return event_participant_id;
     }
-    public void setEvent_id(int event_id) {
-        this.event_id = event_id;
+
+    public void setEvent_participant_id(int event_participant_id) {
+        this.event_participant_id = event_participant_id;
     }
-    public int getUser_id(){
-        return user_id;
+
+    public Event getEvent() {
+        return event;
     }
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
