@@ -4,22 +4,25 @@ export default function GroupListItem(props) {
     function handleClick() {
         props.onClick(props.item)
     }
-
+    
     function getColor() {
         if (props.variant === "primary") {
             return "#bee0ec"
-        } else {
+        }
+ 
+        else {
             return "#e9f5f9"
         }
-    }
 
+    }
+    
     function getBadgeBackgroundColor() {
         if (props.item.category === "Physical") {
-            return "primary"
-        } else if (props.item.category === "Leisure") {
-            return "secondary"
-        } else if (props.item.category === "Arts and Crafts") {
             return "success"
+        } else if (props.item.category === "Leisure") {
+            return "dark"
+        } else if (props.item.category === "Arts and Crafts") {
+            return "primary"
         } else if (props.item.category === "Games") {
             return "danger"
         } else if (props.item.category === "Nature") {

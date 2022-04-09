@@ -2,6 +2,7 @@ import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } fr
 import { useState } from "react";
 import ListItem from "./ListItem";
 import "./Account.css";
+import CreateGroupModal from "../CreateGroupModal";
 
 export default function AccountPage() {
     const [user, setUser] = useState(temporaryUser)
