@@ -35,27 +35,37 @@ export default function Registration() {
                 </Row>
                 
                 <Col className="mb-3-holder">
+                    <Row className="label-holder">
+                        <label>First name:x</label>
+                    </Row>
                     <Row className="mb-3" controlId="registrationFormFirstName">
-                        <label>First name</label>
                         <Form.Control type="text" placeholder="Enter first name" />
                     </Row>
+                    <Row className="label-holder">
+                        <label>Last Name:</label>
+                    </Row>
                     <Row className="mb-3" controlId="registrationFormLasttName">
-                        <label>Last name</label>
                         <Form.Control type="text" placeholder="Enter last name" />
                     </Row>
+                    <Row className="label-holder">
+                        <label>Email Address:</label>
+                    </Row>
                     <Row className="mb-3" controlId="registrationFormEmail">
-                        <label>Email address</label>
                         <Form.Control type="email" placeholder="Enter email" />
                         <text className="text-muted">
                         We'll never share your email with anyone else.
                         </text>
                     </Row>
+                    <Row className="label-holder">
+                        <label>Password:</label>
+                    </Row>
                     <Row className="mb-3" controlId="registrationFormPassword">
-                        <label>Password</label>
                         <Form.Control type="password" placeholder="Password" />
                     </Row>
+                    <Row className="label-holder">
+                        <label>Date of Birth:</label>
+                    </Row>
                     <Row className="mb-3" controlId="registrationFormBirthday">
-                        <label>Date of Birth</label>
                         <Form.Control type="date" name='date_of_birth' />
                     </Row>
                     <Button className="register-button" variant="primary" type="submit">
