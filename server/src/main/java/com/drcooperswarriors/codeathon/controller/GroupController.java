@@ -1,13 +1,12 @@
 package com.drcooperswarriors.codeathon.controller;
 
+import com.drcooperswarriors.codeathon.model.Event;
 import com.drcooperswarriors.codeathon.model.Group;
 import com.drcooperswarriors.codeathon.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,4 +34,9 @@ public class GroupController {
         }
 
     }
+//    @PostMapping("/api/event")
+//    Group newGroup(@RequestBody Group group) {
+//        return groupRepository.save(group);
+//    }
+
 }
