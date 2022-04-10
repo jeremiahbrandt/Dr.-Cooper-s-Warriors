@@ -1,4 +1,4 @@
-Insert into events values(
+Insert into events values
 (1, "Blue Valley Park Rd E", NULL, 39.081415, -94.509650, "Who Who's Watching"),
 (2, "4209 Oak St", NULL, 39.050584, -94581790, "March of the Walkers"),
 (3, "Broadway Boulevard", NULL, 39.094037, -94.588452, "Ton of Chess"),
@@ -11,5 +11,4 @@ Insert into events values(
 (10,"15120 W 63rd St, Shawnee", Null, "39.01568", "-94.76276" "Shawnee"),
 (11,"2000 Prospect Ave, Kansas City", Null,"39.08854","-94.55362","Blue Park"),
 (12,"18695 S Lackman Rd, Olathe",Null,38.79151,-94.75569,"Wolf Creek"),
-(13,"8045 Santa Fe Dr, Overland Park",NULL,"38.98269","-94.67201", "Tom Park")
-);
+(13,"8045 Santa Fe Dr, Overland Park",NULL,"38.98269","-94.67201", "Tom Park");
