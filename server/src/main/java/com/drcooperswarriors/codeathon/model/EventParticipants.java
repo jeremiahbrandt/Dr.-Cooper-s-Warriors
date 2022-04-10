@@ -1,23 +1,33 @@
 package com.drcooperswarriors.codeathon.model;
 
+import com.drcooperswarriors.codeathon.repository.EventRepository;
+import com.drcooperswarriors.codeathon.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
+import java.util.Optional;
+
 @Entity
 @Table(name = "eventParticipants")
 public class EventParticipants {
+//    @Autowired
+//    private EventRepository eventRepository;
+//
+//    @Autowired
+//    private UserRepository userRepository;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "event_participant_id")
     private Long event_participant_id;
 
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name="event_id", nullable = false)
     private Event event;
 
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name="user_id", nullable = false)
     private User user;
-
-
 
 
 
