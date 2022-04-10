@@ -24,10 +24,8 @@ public class Event {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cat_id", referencedColumnName = "cat_id")
-    private Categories categories;
-
+    @Column(name = "imageURL")
+    private String imageURL;
 
 
     //getters and setters
@@ -58,6 +56,9 @@ public class Event {
     public void setaddress(String address) {
         this.address = address;
     }
+
+    public String getImageURL() { return imageURL; }
+    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
 
 
 }

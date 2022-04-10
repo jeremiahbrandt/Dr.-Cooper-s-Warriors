@@ -1,5 +1,6 @@
 package com.drcooperswarriors.codeathon.controller;
 
+<<<<<<< HEAD
 import com.drcooperswarriors.codeathon.model.User;
 import com.drcooperswarriors.codeathon.repository.UserRepository;
 import com.drcooperswarriors.codeathon.security.JwtUtils;
@@ -34,4 +35,7 @@ public class UserController {
         return userRepository.findAll();
     }
     
+=======
+public class UserController {
+>>>>>>> c6c602ac001fd3300c45ae2c8e4d139b16295446
 }

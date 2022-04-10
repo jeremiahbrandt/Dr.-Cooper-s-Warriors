@@ -4,7 +4,8 @@ import ListItem from "./ListItem";
 import "./Account.css";
 import CreateGroupModal from "../CreateGroupModal";
 import axios from "axios";
-
+import {  Link } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
 export default function AccountPage() {
     const [user, setUser] = useState(temporaryUser)
     const [events, setEvents] = useState(temporaryEvents);
@@ -54,7 +55,7 @@ export default function AccountPage() {
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-event.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="primary" onClick={handleFindMoreEvents}>Find More Events</Button>
+                                    <Button variant="primary"  onClick={handleFindMoreEvents}><Nav.Link as={Link} to="/Events">Find More Events</Nav.Link></Button>
                                 </Card.ImgOverlay>
                             </Card>
                         </Card.Body>
@@ -70,8 +71,8 @@ export default function AccountPage() {
                             <Card style={{ marginTop: '20px' }}>
                                 <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg" />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="success">Create Group</Button> 
-                                    <Button variant="primary">Find More Groups</Button>
+                                    <Button variant="success"><Nav.Link as={Link} to="/Groups">Create Group</Nav.Link></Button> 
+                                    <Button variant="primary"><Nav.Link as={Link} to="/Groups">Find More Group</Nav.Link></Button>
                                 </Card.ImgOverlay>
                             </Card>
                         </Card.Body>
