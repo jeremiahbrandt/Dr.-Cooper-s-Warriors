@@ -9,13 +9,11 @@ export function useGroups() {
 
     useEffect(() => {
         async function fetchGroups() {
-            const response = await fetch("http://localhost:8080/api/groups");
-            const data = await response.json();
-
-
+            const groups = (await axios.get("http://localhost:8080/api/groups")).data;
             const categories = (await axios.get("http://localhost:8080/api/category")).data;
-            setGroups(data);
-            setInitialGroups(data);
+
+            setGroups(groups);
+            setInitialGroups(groups);
             setFilters(categories);
         }
         fetchGroups();

@@ -6,24 +6,33 @@ import { useGroups } from '../hooks/useGroups'
 import axios from 'axios';
 
 const colors = ["#0275d8",
-   "#5cb85c",
-   "#5bc0de",
-    "#f0ad4e",
-    "#d9534f",
-    ]
+  "#5cb85c",
+  "#5bc0de",
+  "#f0ad4e",
+  "#d9534f",
+]
 
 function Events(props) {
   const { filters, groups, handleClick, toggleFilter } = useGroups()
   const [markers, setMarkers] = useState([])
+  const [filteredMarkers, setFilteredMarkers] = useState([])
 
   useEffect(() => {
     async function refreshMarkers() {
       const events = (await axios.get('http://localhost:8080/api/event')).data
       setMarkers(events)
-      console.log(events)
     }
     refreshMarkers()
   }, [])
+
+  useEffect(() => {
+    const appliedFilters = filters.filter(filter => filter.checked === undefined || filter.checked === false)
+
+    const filteredMarkers = markers.filter(marker => {
+      return appliedFilters.map(filter => filter.cat_id).includes(marker.group.category.cat_id)
+    })
+    setFilteredMarkers(filteredMarkers)
+  }, [filters, markers])
 
   return (
     <div style={{ margin: "0 auto", height: '80vh', width: '80%' }}>
@@ -40,13 +49,13 @@ function Events(props) {
         defaultZoom={12}
       >
         {
-          markers.map((marker, index) => {
+          filteredMarkers.map((marker, index) => {
             return (
               <Marker
                 key={`marker-${index}`}
                 lat={marker.lat}
                 lng={marker.log}
-                color={colors[marker.group.category.cat_id-1]}
+                color={colors[marker.group.category.cat_id - 1]}
                 address={marker.address}
                 category={marker.group.category.name}
                 name={marker.name}
