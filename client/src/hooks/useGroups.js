@@ -14,7 +14,6 @@ export function useGroups() {
 
 
             const categories = (await axios.get("http://localhost:8080/api/category")).data;
-            console.log(categories)
             setGroups(data);
             setInitialGroups(data);
             setFilters(categories);

@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 
 
 export default function GroupPage(props){
-    console.log(props);
     const { id } = useParams();
 
     useEffect(()=>{
