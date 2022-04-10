@@ -1,0 +1,48 @@
+
+.event-name-label{
+  font-size:.75rem !important;
+  position: relative;
+  left:1%;
+  top: 25px;
+  margin-bottom: 35px;
+}
+.event-date-label{
+  font-size:.75rem !important;
+  position: relative;
+  left:1%;
+  top: -45px;
+  margin-bottom: 35px;
+}
+.event-time-label{
+  font-size:.75rem !important;
+  position: relative;
+  left:-39%;
+  top: 9px;
+  margin-bottom: 35px;
+}
+.event-address-label{
+  font-size:.75rem !important;
+  position: relative;
+  left: 67%;
+  top: -96px;
+}
+.event-address-text{
+  position: relative;
+  left: 35%;
+  top: -34px;
+  width: 12rem;
+}
+
+.event-description-label{
+  font-size:.75rem !important;
+  position: relative;
+  left: 64%;
+  top: -122px;
+}
+.event-description-text{
+  position: relative;
+  left: 30.5%;
+  top: -68px;
+  width: 10rem;
+  width: 12rem;
+}
