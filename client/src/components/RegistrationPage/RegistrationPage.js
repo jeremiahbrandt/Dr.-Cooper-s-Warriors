@@ -41,7 +41,7 @@ export default function Registration(props) {
                 
                 <Col className="mb-3-holder">
                     <Row className="label-holder">
-                        <label>First name:x</label>
+                        <label>First name:</label>
                     </Row>
                     <Row className="mb-3" controlId="registrationFormFirstName">
                         <Form.Control type="text" placeholder="Enter first name" />
