@@ -13,11 +13,9 @@ function Home() {
           <Col className="text-box">
             <div >
               <h1>Site Info</h1>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-                PageMaker including versions of Lorem Ipsum.</p>
+              <p>Recenly we have seen more mask restrictions being lifted and people being ok to be outside again, but still people
+                still strugle to get back to a social norm and reconnect with people. "Cool App" can help people find groups or hobbies to join around
+                local city. Make an account to start looking for activites or create a post to find people to join your group</p>
             </div>
           </Col>
           <Col className="img-box"> 
