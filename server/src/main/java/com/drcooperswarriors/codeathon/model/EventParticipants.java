@@ -17,6 +17,11 @@ public class EventParticipants {
     @JoinColumn(name="user_id", nullable = false)
     private User user;
 
+
+
+
+
+
     public Long getEvent_participant_id() {
         return event_participant_id;
     }
