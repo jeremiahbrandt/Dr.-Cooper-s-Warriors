@@ -126,7 +126,11 @@ const Bio = styled.p`
     line-height: 1.25em;
 `
 const Push = styled.div`
+    display: flex;
     padding-bottom:30px;
+    padding: left:50px;
+    justify-content: center;
+    gap: 100px;
 `
 const PostBody = styled.div`
 `
