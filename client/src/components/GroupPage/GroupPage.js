@@ -128,9 +128,7 @@ const Bio = styled.p`
 const Push = styled.div`
     display: flex;
     padding-bottom:30px;
-    padding: left:50px;
     justify-content: center;
-    gap: 100px;
 `
 const PostBody = styled.div`
 `
