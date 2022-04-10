@@ -2,7 +2,7 @@ import './Marker.css';
 import { useState } from 'react';
 import InfoWindow from './InfoWindow'
 const Marker = (props) => {
-    const { color, name, id } = props;
+    const { color, name } = props;
     const [show, setShow] = useState(false);
     return (
      <>
@@ -12,7 +12,7 @@ const Marker = (props) => {
         onClick={() => setShow(!show)}
       />
       <div className='pulse' />
-      {show ? <InfoWindow address={props.address} setTrigger={() => setShow(false)} /> : ""}
+      {show ? <InfoWindow address={props.address} category={props.category} name={props.name} setTrigger={() => setShow(false)} /> : ""}
       </>
     );
   };

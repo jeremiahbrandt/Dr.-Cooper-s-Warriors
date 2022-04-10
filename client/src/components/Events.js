@@ -5,6 +5,13 @@ import Marker from './Marker';
 import { useGroups } from '../hooks/useGroups'
 import axios from 'axios';
 
+const colors = ["#0275d8",
+   "#5cb85c",
+   "#5bc0de",
+    "#f0ad4e",
+    "#d9534f",
+    ]
+
 function Events(props) {
   const { filters, groups, handleClick, toggleFilter } = useGroups()
   const [markers, setMarkers] = useState([])
@@ -32,24 +39,17 @@ function Events(props) {
         }}
         defaultZoom={12}
       >
-
-        {/* <Marker
-          lat={39.245542}
-          lng={-94.754651}
-          name="Marker"
-          color={"#57a8cc"}
-        /> */}
-
         {
           markers.map((marker, index) => {
             return (
               <Marker
                 key={`marker-${index}`}
-                title={marker.title}
                 lat={marker.lat}
                 lng={marker.log}
-                color={"#57a8cc"}
+                color={colors[marker.group.category.cat_id-1]}
                 address={marker.address}
+                category={marker.group.category.name}
+                name={marker.name}
               />
             )
           })
