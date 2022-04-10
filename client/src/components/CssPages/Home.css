@@ -37,4 +37,10 @@
     cursor: default;
     text-decoration:none;
 }
+.home-button:hover{
+    color: red !important;
+}
+.Nav.Link{
+    color: red;
+}
 
