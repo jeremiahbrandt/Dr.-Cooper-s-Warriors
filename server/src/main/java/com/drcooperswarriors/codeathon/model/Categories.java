@@ -1,7 +1,7 @@
 package com.drcooperswarriors.codeathon.model;
 import javax.persistence.*;
 @Entity
-@Table(name = "eventParticipants")
+@Table(name = "categories")
 public class Categories {
     @Id
     @Column(name = "cat_id")

@@ -10,10 +10,13 @@ import java.util.Date;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int user_id;
 
     private String username;
+
+
     private String password;
 
     public String getPassword() {
