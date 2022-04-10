@@ -39,6 +39,7 @@ public class EventController {
     }
 
     @PostMapping("/register")
+    @CrossOrigin
     @ResponseBody
     public ResponseEntity<Object> registerForEvent(@RequestParam(required = true) int eventId){
         // TODO Remove
