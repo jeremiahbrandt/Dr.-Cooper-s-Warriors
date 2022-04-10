@@ -12,3 +12,9 @@
     color: rgb(158, 157, 157);
     font-size:.60rem;
 }
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: black;
+}

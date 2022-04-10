@@ -3,6 +3,7 @@ import { ListGroup } from "react-bootstrap";
 import { useState } from "react";
 import "./CssPages/Home.css";
 import {  Link } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
 //import logo from '../Path/background.jpeg';
 function Home() {
   return (
@@ -26,7 +27,7 @@ function Home() {
         </Row>
       </Container>
       <div>
-        <button className="home-button"><Link as={Link} style={{ textDecoration: 'none', color: 'black' }}to="/Register">GetStarted</Link></button>
+        <button className="home-button"><Nav.Link as={Link} to="/Register">Get Started</Nav.Link></button>
         
       </div>
     </div>

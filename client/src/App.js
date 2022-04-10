@@ -12,6 +12,7 @@ import GroupPage from './components/GroupPage/GroupPage';
 import CreateGroupModal from './components/CreateGroupModal';
 
 
+
 function App() {
   function refreshTokenSetup(res) {
     window.sessionStorage.setItem("token", res.tokenObj.id_token);
