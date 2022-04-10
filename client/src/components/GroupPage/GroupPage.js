@@ -3,26 +3,41 @@ import Button from 'react-bootstrap/Button'
 import Posts from './Posts'
 import styled from "styled-components"
 import { useEffect , useState} from "react"
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import CreateEventModal from "../CreateEventModal"
+import axios from 'axios';
+
+
 
 export default function GroupPage(props){
-    const { id } = useParams();
+    let[searchParams, setSearchParams] = useSearchParams();
     const [show, setShow] = useState(false);
+    const url = "http://localhost:8080/api/group?id=";
+    const [group, setGroup] = useState();
+
+    const getAllGroups = async () => {
+        const id = searchParams.get("id")
+        console.log(id)
+        const groups = (await axios.get(`http://localhost:8080/api/group?id=${id}`)).data
+        console.log(groups);
+        setGroup(groups)
+    }
+    
+
     useEffect(()=>{
+        getAllGroups()
     },[])
     return(
         
     <Container>
         <Flex>
-        <GroupName as="h1">Morning Yoga</GroupName>
+        <GroupName as="h1">{group?.group_name}</GroupName>
         <Image>
             <img src="rex.jpg"/>
         </Image>
         </Flex>
         {/* <Bio as="p">{}</Bio> */}
-        <Bio as="p">In the yogic discipline, the morning is considered as a “divine time” and when an individuals spiritual energy is at its peak. 
-        This is a group that meets at 6 in the morning to do yoga and connect with ourselfs. Everyone is welcome to join.
+        <Bio as="p">{group?.group_description}
         </Bio>
         <Push>
             <Button variant="primary" type="submit">Create Event</Button>
