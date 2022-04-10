@@ -10,13 +10,15 @@ export default function groupPage(props){
         
     <Container>
         <Flex>
-        <GroupName as="h1">Group Name</GroupName>
+        <GroupName as="h1">Morning Yoga</GroupName>
         <Image>
-            <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35"/>
+            <img src="rex.jpg"/>
         </Image>
         </Flex>
         {/* <Bio as="p">{}</Bio> */}
-        <Bio as="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus. Amet purus massa accumsan in. Facilisis nec aliquet ac nulla. Odio et eros, pretium lacus, nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus. </Bio>
+        <Bio as="p">In the yogic discipline, the morning is considered as a “divine time” and when an individuals spiritual energy is at its peak. 
+        This is a group that meets at 6 in the morning to do yoga and connect with ourselfs. Everyone is welcome to join.
+        </Bio>
         <Push>
             <Button variant="primary" type="submit">Create Event</Button>
         </Push>
@@ -62,33 +64,33 @@ const PostBody = styled.div`
 const tempPosts = [
     {
         id: 1,
-        name: 'Bob',
-        image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35",
-        post: "Hello, my name is Bob and I like this club a lot. Can't wait for the next meeting!sLorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus. Amet purus massa accumsan in. Facilisis nec aliquet ac nulla. Odio et eros, pretium lacus, nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere vitae enim risus consectetur sed at vitae lectus."
+        name: 'Betty',
+        image: "person10.jpg",
+        post: "This group is open for anyone to join and ask questions about yoga"
     },
     {
         id: 2,
         name: 'Annie',
-        image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35",
-        post: "Hello, my name is Bob and I like this club a lot. Can't wait for the next meeting!s"
+        image: "person3.jpg",
+        post: "I love the atmosphere, the people and the awesome workouts!"
     },
     {
         id: 3,
         name: 'Sam',
-        image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35",
-        post: "Hello, my name is Bob and I like this club a lot. Can't wait for the next meeting!s"
+        image: "person1.jpg",
+        post: "This class has really helped my back, would recommend"
     },
     {
         id: 4,
         name: 'Bob Jr.',
-        image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35",
-        post: "Hello, my name is Bob and I like this club a lot. Can't wait for the next meeting!s"
+        image: "person9.jpg",
+        post: "I absolutely love this studio! It has changed my life and yoga practice. Love classes with Emily, Cat, Bailee, Ryan, and Tiffany! But seriously, they're all amazing. 10/10 recommend."
     },
     {
         id: 5,
         name: 'Loraine',
-        image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=35",
-        post: "Hello, my name is Bob and I like this club a lot. Can't wait for the next meeting!s"
+        image: "image8.jpg",
+        post: "Great locations, good variety of classes and excellent teachers."
     }
 
 ]
