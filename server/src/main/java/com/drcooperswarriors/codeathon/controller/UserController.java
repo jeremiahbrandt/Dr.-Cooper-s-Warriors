@@ -57,8 +57,8 @@ public class UserController {
         User user = userRepository.getUserById(id);
 
         if(user != null) {
-            List<Event> events = eventParticipantsRepository.getEventsByUsername(user);
-            List<Group> groups = eventParticipantsRepository.getGroupsByUsername(user);
+            List<Event> events = eventParticipantsRepository.getEventsByUsername(user.getUser_id());
+            List<Group> groups = eventParticipantsRepository.getGroupsByUsername(user.getUser_id());
             UserResponse ur = new UserResponse(user, events, groups );
             return ResponseEntity.ok(user);
         } else {

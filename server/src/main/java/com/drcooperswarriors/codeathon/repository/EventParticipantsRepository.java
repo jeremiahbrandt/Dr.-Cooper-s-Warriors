@@ -18,11 +18,11 @@ public interface EventParticipantsRepository extends JpaRepository<EventParticip
 //    @Query("SELECT e FROM EventParticipants e WHERE e.user = :user")
 //    public List<Event> getEventsByUsername(@Param("user") User user);
 
-    @Query(value = "SELECT e FROM Event e WHERE e.event_id IN (SELECT event_id FROM EventParticipants WHERE user_id = :user)", nativeQuery = true)
-    public List<Event> getEventsByUsername(@Param("user") User user);
+    @Query(value = "SELECT * FROM events WHERE event_id IN (SELECT event_id FROM EventParticipants WHERE user_id = ?1)", nativeQuery = true)
+    public List<Event> getEventsByUsername(@Param("user") Integer user_id);
 
-    @Query(value = "SELECT g FROM Group g WHERE g.user_id IN (SELECT event_id FROM EventParticipants WHERE user_id = :user);", nativeQuery = true)
-    public List<Group> getGroupsByUsername(@Param("user") User user);
+    @Query(value = "SELECT * FROM grops WHERE group_id IN (SELECT event_id FROM EventParticipants WHERE user_id = ?1)", nativeQuery = true)
+    public List<Group> getGroupsByUsername(@Param("user") Integer user_id);
 
     @Transactional
     @Modifying
