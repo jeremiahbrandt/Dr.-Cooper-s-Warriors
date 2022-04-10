@@ -56,11 +56,10 @@ export default function GroupPage(props) {
         <Container>
             <Flex>
                 <GroupName as="h1">{group?.group_name}</GroupName>
-                <Image>
+                {/* <Image>
                     <img src="rex.jpg" />
-                </Image>
+                </Image> */}
             </Flex>
-            {/* <Bio as="p">{}</Bio> */}
             <Bio as="p">{group?.group_description}
             </Bio>
             <Push>
@@ -93,6 +92,12 @@ export default function GroupPage(props) {
                                 rows="2"
                             />
                         </div>
+                        <label className="event-lat-label"><b>Area Latitude:</b>
+                            <input className="group-lat-input" type="text" />
+                        </label>
+                        <label className="event-long-label"><b>Area Logitude: </b>
+                            <input className="group-long-input" type="text" />
+                        </label>
                     </Modal.Body>
                     <Modal.Footer className="d-flex justify-content-between">
                         <Button variant="success" onClick={handleClose}>
