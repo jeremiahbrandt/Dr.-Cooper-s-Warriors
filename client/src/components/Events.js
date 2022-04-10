@@ -59,6 +59,7 @@ function Events(props) {
                 address={marker.address}
                 category={marker.group.category.name}
                 name={marker.name}
+                markerId={marker.event_id}
               />
             )
           })

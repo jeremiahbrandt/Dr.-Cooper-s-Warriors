@@ -12,7 +12,7 @@ const Marker = (props) => {
         onClick={() => setShow(!show)}
       />
       <div className='pulse' />
-      {show ? <InfoWindow address={props.address} category={props.category} name={props.name} setTrigger={() => setShow(false)} /> : ""}
+      {show ? <InfoWindow markerId={props.markerId} address={props.address} category={props.category} name={props.name} setTrigger={() => setShow(false)} /> : ""}
       </>
     );
   };
