@@ -14,9 +14,10 @@ public class User {
     @Column(name = "user_id")
     private int user_id;
 
+    @Column(name = "username")
     private String username;
 
-
+    @Column(name = "password")
     private String password;
 
     public String getPassword() {
