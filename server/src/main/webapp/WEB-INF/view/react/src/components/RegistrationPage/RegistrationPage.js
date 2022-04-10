@@ -3,17 +3,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './RegistrationPage.css';
 import axios from 'axios';
+import GoogleLogin from "react-google-login";
+import { propTypes } from "google-map-react";
 
-export default function Registration() {
-    function handleSubmit(e) {
-        e.preventDefault()
-        // TODO: Call api
-        // axios.post(/api/)
-    }
-    async function handleLoginClick() {
-        await axios.get('http://localhost:8080/login').then(res => {
-            console.log(res)
-        })
+export default function Registration(props) {
+    function responseFailureGoogle() {
     }
 
     return (
@@ -29,11 +23,15 @@ export default function Registration() {
                 </Col>
 
                 <Row className="google-holder">
-                    <div className='button-Google' >
-                        <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=752684579731-51ocrrorqh65rjvdh7mmg9kqrsj7i68q.apps.googleusercontent.com&scope=email%20profile&state=6twNhAwqXHpUEsnRp3Xm0UcFPVOLpDbTWrccgHXoMN0%3D&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth2%2Fcode%2Fgoogle&flowName=GeneralOAuthFlow">Link</a>
-                        <Button onClick={handleLoginClick}>Login Button</Button>
-                            {/* <button type="submit" href="http://localhost:8080/login/oauth2/code/google" className="app-signIn">Sign In with Google</button> */}
-                    </div>
+                <GoogleLogin
+                    clientId="752684579731-51ocrrorqh65rjvdh7mmg9kqrsj7i68q.apps.googleusercontent.com"
+                    buttonText="Login with Google"
+                    onSuccess={props.refreshTokenSetup}
+                    onFailure={responseFailureGoogle}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
+                   
                 </Row>
 
                 <Row className="dash-holder">
