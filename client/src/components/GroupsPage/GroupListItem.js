@@ -45,7 +45,7 @@ export default function GroupListItem(props) {
                     <Col>
                         <Row>
                             <h3 className="d-flex align-items-center">
-                                <Link className="groupLink" to="/GroupPage">{props.item.group_name}</Link>
+                                <span className="groupLink" >{props.item.group_name}</span>
                                 <Badge pill bg={getBadgeBackgroundColor()} style={{ fontSize: '11px', marginLeft: '10px' }}>{props.item.category.name}</Badge>
                             </h3>
                         </Row>
