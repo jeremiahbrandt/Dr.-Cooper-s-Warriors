@@ -9,6 +9,6 @@ INSERT INTO grops VALUES
     	(8,     "Dungeons and Dragons", "The Stormcloaks",      1, 8),
     	(9,     "Book Club",            "Book Club",            3, 9),
     	(10,    "Kite Flying",          "The Kite Runners",     5, 10),
-    	(11,    "Chess Boxing",         "MMA to D4",            1, 11,
+    	(11,    "Chess Boxing",         "MMA to D4",            1, 11),
     	(12,    "Hiking",               "Hike Tyson",           5, 12),
     	(13,    "Bike Club",            "Tour de Chance",       1, 13);
