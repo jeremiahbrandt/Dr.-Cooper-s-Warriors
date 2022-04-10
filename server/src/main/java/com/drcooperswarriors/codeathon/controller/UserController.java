@@ -29,9 +29,9 @@ public class UserController {
         }
 
     }
-    @GetMapping( "/api/users")
-    public List<User> getUsers(){
-        return userRepository.findAll();
-    }
+    // @GetMapping( "/api/users")
+    // public List<User> getUsers(){
+    //     return userRepository.findAll();
+    // }
     
 }
