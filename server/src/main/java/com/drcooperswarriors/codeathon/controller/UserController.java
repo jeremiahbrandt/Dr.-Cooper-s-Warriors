@@ -47,9 +47,10 @@ public class UserController {
     }
 
     @DeleteMapping("/api/user/event")
-    public ResponseEntity cancelRes(@RequestParam(required = true) Integer id){
+    public ResponseEntity cancelRes(@RequestParam(required = true) Integer id) {
         eventParticipantsRepository.deleteById(id);
         return ResponseEntity.ok("Delete");
+    }
 
     @GetMapping("/api/getUserInformation")
     public ResponseEntity getUserInfo(@RequestParam(required = true) Integer id){
