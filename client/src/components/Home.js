@@ -1,9 +1,11 @@
 import { Col, Row, Container } from "react-bootstrap";
+import React from "react"
 import { ListGroup } from "react-bootstrap";
 import { useState } from "react";
 import "./CssPages/Home.css";
 import {  Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
+
 //import logo from '../Path/background.jpeg';
 function Home() {
   return (
@@ -20,8 +22,7 @@ function Home() {
             </div>
           </Col>
           <Col className="img-box"> 
-            {/* <h1>Image</h1> */}
-            {/* <img src={logo} name="Logo" /> */}
+          <img className="map-image" src="/map.jpg" />
           </Col>
         </Row>
       </Container>
