@@ -15,17 +15,17 @@ public class Group {
     @Column(name = "group_description")
     private String group_description;
 
-    public Categories getCategories() {
-        return categories;
+    public Categories getCategory() {
+        return category;
     }
 
-    public void setCategories(Categories categories) {
-        this.categories = categories;
+    public void setCategory(Categories categories) {
+        this.category = categories;
     }
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cat_id", referencedColumnName = "cat_id")
-    private Categories categories;
+    private Categories category;
 
     public int getGroup_id() {
         return group_id;

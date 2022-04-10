@@ -1,89 +1,62 @@
 .w-50 {
     margin: 50px auto;
-
-    max-width: 500px;
+    max-width: 30%;
+    padding-bottom: 1%;
 }
-
 .form-holder {
     background-color: #BDDFEB;
     padding: 1%;
     margin-top: 2%;
     margin-left: 2%;
-    
-
-    width: 95%;
-
+    width: 100%;
     box-shadow: 0 0 5px gray;
-
     animation-name: fadeIn;
     animation-fill-mode: both;
     animation-duration: 1s;
 }
-
 .text-intro-top {
-    display: block;
-    margin-right: 60%;
-
     font-size: 225%;
 }
-
 .text-intro-sub {
     display: block;
-    margin-right: 60%;
-
     font-size: 120%;
 }
-
 .text-intro-top,
 .text-intro-sub {
     color: black;
 }
 
 .text-muted {
-    color: white;
+    color: #ffffff;
 }
 
 .mb-3-holder {
+    margin-top: 5%;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    margin-left: .5%;
-    width: 95%;
-    background-color: #a6dbee;
-    padding: 2%;
-
+    width: 20rem;
 }
-
 .mb-3 {
-    width: 70%;
-    margin-left: 25%;
-    float: left;
+    width: 60%;
+    margin-left: 20%;
 }
-
-.label-holder {
-    display: inline;
-    margin-right: 40%;
-    position: relative;
-    top: 6%;
-    right: 1%;
-}
-
 .google-holder {
+    position: relative;
     padding: 5%;
+    padding-left: 32%;
+    padding-right: 30%;
+    width: 100%;
 }
-
-.dashline-under {
-    margin-top: 1%;
+.buttonText{
+    padding-left: 20%;
 }
-
 .dashline {
     margin-top: 2%;
     text-align: center;
     font-size: 100%;
 }
-  
-  .dashline:before,
-  .dashline:after {
+.dashline:before,
+.dashline:after {
     background-color: #000;
     content: "";
     display: inline-block;
@@ -92,14 +65,11 @@
     vertical-align: middle;
     width: 23%;
 }
-
 .register-button {
     margin-top: 2%;
     margin-left: 25%;
     width: 50%;
-
 }
-
 @keyframes fadeIn {
     0% {
       opacity: 0;
