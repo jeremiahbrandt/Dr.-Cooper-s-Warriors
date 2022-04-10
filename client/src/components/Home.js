@@ -26,7 +26,6 @@ function Home() {
       </Container>
       <div>
         <button className="home-button"><Nav.Link as={Link} to="/Register">Get Started</Nav.Link></button>
-        
       </div>
     </div>
   );
