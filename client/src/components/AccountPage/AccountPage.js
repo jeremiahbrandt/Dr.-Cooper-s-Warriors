@@ -21,18 +21,21 @@ export default function AccountPage() {
     function handleHideCreateGroupModal() {
         setShowCreateGroupModal(false)
     }
-
     function handleClose() {
         setShow(false)
     }
-
+    //Event Popup
     function handleShow(event) {
         setShow(true);
         setModalEvent(event);
     }
-
-    function handleGroupClick(group) {
-        window.location.href = `/groups/${group}`;
+    //Group Popup
+    function handleGroupClick(event) {
+        setShow(true);
+        setModalEvent(event);
+    }
+    function handleGroupClose(){
+        setShow(false)
     }
 
     async function handleFindMoreEvents() {
@@ -66,12 +69,12 @@ export default function AccountPage() {
                         <Card.Header as="h5">Your Groups</Card.Header>
                         <Card.Body>
                             <ListGroup style={{ height: '400px', overflowY: 'scroll' }}>
-                                {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'primary' : 'secondary'} onClick={handleGroupClick} />)}
+                                {groups.map((group, index) => <ListItem item={group} variant={index % 2 === 0 ? 'primary' : 'secondary'}onClick={handleShowCreateGroupModal} />)}
                             </ListGroup>
                             <Card style={{ marginTop: '20px' }}>
-                                <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg" />
+                                <Card.Img style={{ height: '200px', objectFit: 'cover' }} variant="top" src="generic-group.jpg"onClick={handleGroupClick} />
                                 <Card.ImgOverlay className='d-flex justify-content-around align-items-end'>
-                                    <Button variant="success"><Nav.Link as={Link} to="/Groups">Create Group</Nav.Link></Button> 
+                                    <Button variant="success"onClick={handleGroupClick}>Create Group</Button> 
                                     <Button variant="primary"><Nav.Link as={Link} to="/Groups">Find More Group</Nav.Link></Button>
                                 </Card.ImgOverlay>
                             </Card>
@@ -91,12 +94,29 @@ export default function AccountPage() {
                     <p className="description"><b>Description: </b>{modalEvent}</p>
                     <h5 className="num-inter">People interested:{modalEvent}</h5>
                 </Modal.Body>
-
+                
                 <Modal.Footer className="d-flex justify-content-between">
                     <Button variant="danger" onClick={handleClose}>
                         Cancel Reservation
                     </Button>
                     <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            {/*  */}
+            <Modal show={show} onHide={handleGroupClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        {modalEvent}
+                    </Modal.Title>
+                </Modal.Header>
+                
+                <Modal.Footer className="d-flex justify-content-between">
+                    <Button variant="danger" onClick={handleGroupClose}>
+                        Cancel Reservation
+                    </Button>
+                    <Button variant="secondary" onClick={handleGroupClose}>
                         Close
                     </Button>
                 </Modal.Footer>
@@ -164,3 +184,11 @@ const temporaryUser = {
     lastName: 'Doe',
     email: 'johndoe@mail.com'
 }
+
+
+{/* <Modal.Body>
+                    <p className="time-date"><b>Group ID: </b>{modalEvent}</p>
+                    <p className="location"><b>Group Description: </b>{modalEvent}</p>
+                    <p className="description"><b>Group Name: </b>{modalEvent}</p>
+                    <h5 className="num-inter">Group:{modalEvent}</h5>
+                </Modal.Body> */}
