@@ -1,5 +1,7 @@
 package com.drcooperswarriors.codeathon.controller;
 
+import com.drcooperswarriors.codeathon.model.Event;
+import com.drcooperswarriors.codeathon.model.Group;
 import com.drcooperswarriors.codeathon.model.User;
 import com.drcooperswarriors.codeathon.repository.UserRepository;
 import com.drcooperswarriors.codeathon.security.JwtUtils;
@@ -29,6 +31,12 @@ public class UserController {
         }
 
     }
+
+    @PostMapping("/api/users")
+    User newUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
     // @GetMapping( "/api/users")
     // public List<User> getUsers(){
     //     return userRepository.findAll();

@@ -34,9 +34,9 @@ public class GroupController {
         }
 
     }
-//    @PostMapping("/api/event")
-//    Group newGroup(@RequestBody Group group) {
-//        return groupRepository.save(group);
-//    }
+    @PostMapping("/api/event")
+    Group newGroup(@RequestBody Group group) {
+        return groupRepository.save(group);
+    }
 
 }
