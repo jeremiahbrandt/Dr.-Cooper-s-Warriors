@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+
 export function useGroups() {
     const [groups, setGroups] = useState(temporaryGroups);
     const [filters, setFilters] = useState([
@@ -60,6 +61,7 @@ export function useGroups() {
 }
 const temporaryGroups = [
     {
+        id: 1,
         name: "Group 1",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor dignissim convallis aenean et tortor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Tristique senectus et netus et",
         size: "5",
@@ -67,6 +69,7 @@ const temporaryGroups = [
         imageUrl: '/physical.jpg'
     },
     {
+        id: 2,
         name: "Group 2",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor dignissim convallis aenean et tortor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Tristique senectus et netus et",
         size: "3",
@@ -74,6 +77,7 @@ const temporaryGroups = [
         imageUrl: '/leisure.jpg'
     },
     {
+        id: 3,
         name: "Group 3",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor dignissim convallis aenean et tortor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Tristique senectus et netus et",
         size: "12",
@@ -81,6 +85,7 @@ const temporaryGroups = [
         imageUrl: 'arts_and_crafts.jpg'
     },
     {
+        id: 4,
         name: "Group 4",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor dignissim convallis aenean et tortor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Tristique senectus et netus et",
         size: "5",
@@ -88,6 +93,7 @@ const temporaryGroups = [
         imageUrl: 'games.jpg'
     },
     {
+        id: 5,
         name: "Group 5",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor dignissim convallis aenean et tortor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Tristique senectus et netus et",
         size: "3",

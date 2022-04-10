@@ -1,0 +1,14 @@
+.description{
+    text-align: left;
+    font-size:.75rem;
+}
+.time-date{
+    font-size:.75rem;
+}
+.location{
+    font-size:.75rem;
+}
+.num-inter{
+    color: rgb(158, 157, 157);
+    font-size:.60rem;
+}

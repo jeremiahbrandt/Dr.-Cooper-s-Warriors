@@ -9,6 +9,7 @@
     padding: 1%;
     margin-top: 2%;
     margin-left: 2%;
+    
 
     width: 95%;
 
@@ -43,16 +44,28 @@
 }
 
 .mb-3-holder {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     margin-left: .5%;
     width: 95%;
     background-color: #a6dbee;
     padding: 2%;
+
 }
 
 .mb-3 {
-    width: 75%;
-    margin-left: 10%;
-    
+    width: 70%;
+    margin-left: 25%;
+    float: left;
+}
+
+.label-holder {
+    display: inline;
+    margin-right: 40%;
+    position: relative;
+    top: 6%;
+    right: 1%;
 }
 
 .google-holder {
@@ -82,7 +95,7 @@
 
 .register-button {
     margin-top: 2%;
-    margin-left: 1%;
+    margin-left: 25%;
     width: 50%;
 
 }

@@ -3,11 +3,20 @@
     bottom: 150;
     left: '-45px';
     width: 200px;
-    height: 20vh;
-    transform: translate3d(-50%, -100%, 0);
+    height: 22vh;
+    transform: translate3d(-50%, -125%, 0);
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 7px 1px rgb(0 0 0 / 30%);
+}
+.name{
+    color: rgb(0, 0, 0);
+    font-size:1.5rem;
+}
+.info{
+    color: rgb(171, 171, 171);
+    text-align: left;
+    padding-bottom: 5%;
 }
 .close-btn{
     background-color: red !important;
@@ -18,4 +27,10 @@
     right: 1%;
     top: 1%;
     border-radius: 5%;
+}
+.info-button{
+    background-color: #BDDFEB !important;
+    position: absolute;
+    bottom: 3%;
+    left: 30%;
 }

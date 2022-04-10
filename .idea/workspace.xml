@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7abd88b9-ce5c-4666-9f93-2eb75667992b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/CssPages/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/CssPages/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/CssPages/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/CssPages/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/AccountPage/AccountPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/AccountPage/AccountPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/InfoWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/InfoWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/InfoWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/view/react/src/components/InfoWindow.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
