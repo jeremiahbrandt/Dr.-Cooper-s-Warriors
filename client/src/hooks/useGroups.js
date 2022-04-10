@@ -33,8 +33,10 @@ export function useGroups() {
     const [initialGroups, setInitialGroups] = useState(temporaryGroups);
 
 
-    function handleClick() {
+    function handleClick(group_id) {
+        console.log(group_id);
 
+        window.location.href = `/Group?id=${group_id}`;
     }
 
     function toggleFilter(filter) {
