@@ -1,3 +1,6 @@
+.create-gbtn{
+    height: 30% !important;
+}
 .description{
     text-align: left;
     font-size:.75rem;
@@ -17,4 +20,48 @@
 }
 .nav-link:hover{
     color: black;
+}
+.input-fields{
+    position: relative;
+    left: -0px;
+    top: 23px;
+}
+.group-popup{
+    height: 10rem;
+}
+.group-label{
+    font-size:.75rem !important;
+    position: relative;
+    left: 5%;
+    top: 46px;
+    margin-bottom: 35px;
+}
+.group-name-input{
+    position: relative;
+    width: 55%;
+}
+.category-dropBox{
+    position: relative;
+    font-size:.75rem;
+    left: 22px;
+    top: 20px;
+}
+.label-description{
+    font-size:.75rem;
+    position: relative;
+    left: 135%;
+    top: -24px;
+}
+.description-text{
+    width: 80%;
+    height: 80px;
+    position: relative;
+    top: -20px;
+    left: 300px;
+}
+
+.description{
+    position: absolute;
+    left: -10%;
+    top: 90px;
 }
