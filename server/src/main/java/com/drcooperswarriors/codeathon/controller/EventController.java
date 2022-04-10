@@ -42,7 +42,7 @@ public class EventController {
     @CrossOrigin
     @ResponseBody
     public ResponseEntity<Object> registerForEvent(@RequestParam(required = true) int eventId){
-        // TODO Remove
+        // TODO extract userId from token in Authorization header
         int userId = 1;
         EventParticipants eventParticipants = new EventParticipants();
         Optional<Event> event = eventRepository.findById(eventId);
