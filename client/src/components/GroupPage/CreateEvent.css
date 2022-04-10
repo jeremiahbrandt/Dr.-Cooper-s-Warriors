@@ -43,6 +43,26 @@
   position: relative;
   left: 30.5%;
   top: -68px;
-  width: 10rem;
   width: 12rem;
+}
+.event-lat-label{
+  font-size:.75rem !important;
+  position: relative;
+  top: -50px;
+  left:1%;
+}
+.group-lat-input{
+  width: 40%;
+  position: relative; 
+}
+.event-long-label{
+  font-size:.75rem !important;
+  position: relative;
+  width: 40%;
+  top: 7px;
+  left: -225px;
+}
+.group-long-input{
+  width: 50%;
+  top: -50px;
 }
