@@ -2,13 +2,13 @@ import React from "react"
 import Button from 'react-bootstrap/Button'
 import Posts from './Posts'
 import styled from "styled-components"
-import { useEffect } from "react"
+import { useEffect , useState} from "react"
 import { useParams } from "react-router-dom";
-
+import CreateEventModal from "../CreateEventModal"
 
 export default function GroupPage(props){
     const { id } = useParams();
-
+    const [show, setShow] = useState(false);
     useEffect(()=>{
     },[])
     return(
@@ -31,7 +31,6 @@ export default function GroupPage(props){
         <PostBody>
             <Posts posts={tempPosts} />
         </PostBody>
-        
     </Container>
         
 
