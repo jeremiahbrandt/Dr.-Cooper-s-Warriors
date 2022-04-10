@@ -19,7 +19,27 @@ public class Member {
     private Group group;
 
 
+    public Long getMember_id() {
+        return member_id;
+    }
 
+    public void setMember_id(Long member_id) {
+        this.member_id = member_id;
+    }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 }
