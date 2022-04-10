@@ -91,7 +91,7 @@ export default function AccountPage() {
                 <Modal.Body>
                     <p className="time-date"><b>Event Info: </b>{modalEvent}</p>
                     <p className="location"><b>Event Location: </b>{modalEvent}</p>
-                    <p className="description"><b>Description: </b>{modalEvent}</p>
+                    <p className="event-description"><b>Description: </b>{modalEvent}</p>
                     <h5 className="num-inter">People interested:{modalEvent}</h5>
                 </Modal.Body>
 
