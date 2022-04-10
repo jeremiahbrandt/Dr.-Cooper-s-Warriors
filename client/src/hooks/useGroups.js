@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 
 export function useGroups() {
-    const [groups, setGroups] = useState(temporaryGroups);
+    const [groups, setGroups] = useState([]);
     const [filters, setFilters] = useState([
         {
             name: "Physical",
@@ -30,7 +30,17 @@ export function useGroups() {
             checked: true
         }
     ])
-    const [initialGroups, setInitialGroups] = useState(temporaryGroups);
+    const [initialGroups, setInitialGroups] = useState([]);
+
+    useEffect(() => {
+        async function fetchGroups() {
+            const response = await fetch("http://localhost:8080/api/groups");
+            const data = await response.json();
+            setGroups(data);
+            setInitialGroups(data);
+        }
+        fetchGroups();
+    }, []);
 
 
     function handleClick(group_id) {

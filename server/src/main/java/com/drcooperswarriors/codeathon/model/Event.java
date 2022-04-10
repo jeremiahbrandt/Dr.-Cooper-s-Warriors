@@ -24,11 +24,6 @@ public class Event {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cat_id", referencedColumnName = "cat_id")
-    private Categories categories;
-
-
 
     //getters and setters
     public double getevent_id() {
