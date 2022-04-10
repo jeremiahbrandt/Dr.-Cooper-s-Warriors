@@ -6,7 +6,6 @@ import styled from "styled-components"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useSearchParams} from "react-router-dom";
-import CreateEventModal from "../CreateEventModal"
 import "./CreateEvent.css";
 export default function GroupPage(props) {
 
@@ -56,9 +55,9 @@ export default function GroupPage(props) {
         <Container>
             <Flex>
                 <GroupName as="h1">{group?.group_name}</GroupName>
-                {/* <Image>
+                <Image>
                     <img src="rex.jpg" />
-                </Image> */}
+                </Image>
             </Flex>
             <Bio as="p">{group?.group_description}
             </Bio>
