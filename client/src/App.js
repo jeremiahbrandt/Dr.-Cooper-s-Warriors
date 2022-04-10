@@ -8,9 +8,7 @@ import AccountPage from "./components/AccountPage/AccountPage";
 import Registration from './components/RegistrationPage/RegistrationPage';
 import Footer from './components/Footer';
 import GroupPage from './components/GroupPage/GroupPage';
-import CreateGroupModal from './components/CreateGroupModal';
-
-
+import GroupsPage from './components/GroupsPage/GroupsPage';
 
 function App() {
   function refreshTokenSetup(res) {
@@ -39,7 +37,7 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home />} />
             <Route path='/account' element={<AccountPage />} />
-            {/* <Route path='/Groups' element={<GroupsPage />} /> */}
+            <Route path='/Groups' element={<GroupsPage />} />
             <Route path='/Events' element={<Events />} />
             <Route path='/Register' element={<Registration />} />
             <Route path='/Account' element={<AccountPage />} />
