@@ -67,6 +67,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .authorizeRequests()
+                .antMatchers(HttpMethod.DELETE, "/api/**")
+                .permitAll()
+                .and()
+                .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/api/**")
                 .permitAll()
                 .anyRequest().authenticated();
