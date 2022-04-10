@@ -12,9 +12,9 @@ function CatBox(props) {
             <Row>
                 <form>
                     {filters.map((filter, index) => (
-                        <label className='catLabel'>
+                        <label className='catLabel' key={`cat-${index}`}>
                             {filter.name}
-                            <input className='catInput' type="checkbox" id='physical' value={filter.value} onClick={handleClick} checked={filter.checked} />
+                            <input className='catInput' type="checkbox" id='physical' value={filter.cat_id} onChange={handleClick} checked={!filter.checked} />
                         </label>
                     ))}
                 </form>
