@@ -2,6 +2,7 @@ import "./InfoWindow.css";
 import {Button, Container} from 'react-bootstrap';
 
 const InfoWindow = (props) => {
+  // console.log(props)
     return (
     <div className="infoWindow">
     <Container>
@@ -10,8 +11,8 @@ const InfoWindow = (props) => {
       <h3 className="name">Look at Nick's Kayak</h3>
       <hr></hr>
       <div className="info">
-        <div>Category: Leisure</div>
-        <div>Address: Nick's House</div>
+        <div>Category: {props.imageURL}</div>
+        <div>Address: {props.address}</div>
         <div>Date/Time: 05/07/22</div>
       </div>
       
