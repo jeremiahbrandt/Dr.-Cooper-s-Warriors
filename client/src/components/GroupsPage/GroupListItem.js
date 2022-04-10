@@ -1,10 +1,12 @@
 import { ListGroup, Row, Col, Image, Container, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import GroupPage from "../GroupPage/GroupPage";
+import "./GroupLinks.css";
+
 
 export default function GroupListItem(props) {
     function handleClick() {
-        props.onClick(props.item)
+       props.onClick(props.item.id)
     }
     
     function getColor() {
@@ -41,7 +43,7 @@ export default function GroupListItem(props) {
                 <Row>
                     <Col>
                         <Row>
-                            <h3 className="d-flex align-items-center"><Link group={props.item} to="/GroupPage">{props.item.name}</Link><Badge pill bg={getBadgeBackgroundColor()} style={{ fontSize: '11px', marginLeft: '10px' }}>{props.item.category}</Badge></h3>
+                            <h3 className="d-flex align-items-center"><Link className="groupLink" group={props.item} to="/GroupPage">{props.item.name}</Link><Badge pill bg={getBadgeBackgroundColor()} style={{ fontSize: '11px', marginLeft: '10px' }}>{props.item.category}</Badge></h3>
                         </Row>
                         <Row>
                             <p>{props.item.description}</p>

@@ -2,10 +2,16 @@ import React from "react"
 import Button from 'react-bootstrap/Button'
 import Posts from './Posts'
 import styled from "styled-components"
+import { useEffect } from "react"
+import { useParams } from "react-router-dom";
 
 
-export default function groupPage(props){
+export default function GroupPage(props){
     console.log(props);
+    const { id } = useParams();
+
+    useEffect(()=>{
+    },[])
     return(
         
     <Container>
