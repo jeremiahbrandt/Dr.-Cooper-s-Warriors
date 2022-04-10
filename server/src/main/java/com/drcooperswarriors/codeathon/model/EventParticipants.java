@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Optional;
 
 @Entity
-@Table(name = "eventParticipants")
+@Table(name = "eventparticipants")
 public class EventParticipants {
 //    @Autowired
 //    private EventRepository eventRepository;
@@ -19,7 +19,7 @@ public class EventParticipants {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "event_participant_id")
-    private Long event_participant_id;
+    private Integer event_participant_id;
 
     @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name="event_id", nullable = false)
@@ -32,11 +32,11 @@ public class EventParticipants {
 
 
 
-    public Long getEvent_participant_id() {
+    public Integer getEvent_participant_id() {
         return event_participant_id;
     }
 
-    public void setEvent_participant_id(Long event_participant_id) {
+    public void setEvent_participant_id(Integer event_participant_id) {
         this.event_participant_id = event_participant_id;
     }
 
