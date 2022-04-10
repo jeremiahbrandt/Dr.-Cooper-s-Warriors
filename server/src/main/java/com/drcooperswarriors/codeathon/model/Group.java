@@ -8,8 +8,12 @@ public class Group {
     @Id
     @Column(name = "group_id")
     private int group_id;
-    @Column(name = "group_owner")
-    private int group_owner;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id",nullable = false)
+    private User user;
+
+
     @Column(name = "group_name")
     private String group_name;
     @Column(name = "group_description")
@@ -35,12 +39,12 @@ public class Group {
         this.group_id = group_id;
     }
 
-    public int getGroup_owner() {
-        return group_owner;
+    public User getUser() {
+        return user;
     }
 
-    public void setGroup_owner(int group_owner) {
-        this.group_owner = group_owner;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getGroup_name() {

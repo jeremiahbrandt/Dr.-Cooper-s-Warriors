@@ -3,6 +3,7 @@ package com.drcooperswarriors.codeathon.model;
 import com.drcooperswarriors.codeathon.security.Provider;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "events")
@@ -27,10 +28,28 @@ public class Event {
     @Column(name = "imageURL")
     private String imageURL;
 
+    @Column(name = "date")
+    private Date date;
+
     @ManyToOne
     @JoinColumn(name="group_id", nullable = false)
     private Group group;
 
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public int getEvent_id() {
         return event_id;

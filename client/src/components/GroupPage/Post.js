@@ -6,7 +6,7 @@ export default function Post(props){
         <Container>
             <Flex>
                 <Image>
-                    <img src={props.image}/>
+                    <IMG src={props.image}/>
                 </Image>
                 <Name>
                     {props.name}
@@ -35,8 +35,11 @@ const Name = styled.h1`
     font-size: 1rem;
 `
 const Image = styled.div`
-    left: 50%;
-    padding: 1rem; 
+     
+`
+const IMG = styled.img`
+    height: 120px;
+    padding: 1rem;
 `
 const Body = styled.div`
     padding: 10px;
