@@ -3,6 +3,7 @@ package com.drcooperswarriors.codeathon.controller;
 import com.drcooperswarriors.codeathon.model.Event;
 import com.drcooperswarriors.codeathon.model.EventParticipants;
 import com.drcooperswarriors.codeathon.model.User;
+import com.drcooperswarriors.codeathon.model.request.CreateEventRequest;
 import com.drcooperswarriors.codeathon.repository.EventParticipantsRepository;
 import com.drcooperswarriors.codeathon.repository.EventRepository;
 import com.drcooperswarriors.codeathon.repository.GroupRepository;
@@ -19,13 +20,14 @@ import java.util.Optional;
 @CrossOrigin
 @RequestMapping("/api")
 public class EventController {
-
     @Autowired
     private EventRepository eventRepository;
 
     @Autowired
     private EventParticipantsRepository eventParticipantsRepository;
 
+    @Autowired
+    private GroupRepository groupRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -34,8 +36,9 @@ public class EventController {
     public List<Event> getEvents() { return eventRepository.findAll(); }
 
     @PostMapping("/events")
-    Event newEvent(@RequestBody Event event) {
-        return eventRepository.save(event);
+    Event newEvent(@RequestBody CreateEventRequest request) {
+        request.setGroupRepository(groupRepository);
+        return eventRepository.save(request.getEvent());
     }
 
     @PostMapping("/register")

@@ -33,23 +33,14 @@ public class UserController {
 
     }
 
-    @PostMapping("/api/users")
+    @PostMapping("/api/user")
     User newUser(@RequestBody User user) {
+
         return userRepository.save(user);
     }
 
-    // @GetMapping( "/api/users")
-    // public List<User> getUsers(){
-    //     return userRepository.findAll();
-    // }
-//    @GetMapping("/getUserEvents")
-//    public ResponseEntity<List<Event>>getAllEvents(@RequestParam(required = true) Integer id){
-//        Optional<User> user = userRepository.findById(id);
-//        if(user.isPresent()) {
-//            return ResponseEntity.ok(user.get());
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//        return eventParticipantsRepository.getEventsByUsername(user);
-//    }
+    @DeleteMapping("/api/user/event")
+    public ResponseEntity cancelRes(@RequestParam(required = true) Integer id){
+        eventParticipantsRepository.deleteById(id);
+        return ResponseEntity.ok("Delete");
 }
