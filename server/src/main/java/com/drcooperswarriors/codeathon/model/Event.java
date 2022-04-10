@@ -27,38 +27,56 @@ public class Event {
     @Column(name = "imageURL")
     private String imageURL;
 
+    @ManyToOne
+    @JoinColumn(name="group_id", nullable = false)
+    private Group group;
 
-    //getters and setters
-    public double getevent_id() {
-        return lat;
+
+    public int getEvent_id() {
+        return event_id;
     }
-    public void setevent_id(int event_id) {
+
+    public void setEvent_id(int event_id) {
         this.event_id = event_id;
     }
 
-    public double getlat() {
+    public double getLat() {
         return lat;
     }
-    public void setlat(double lat) {
+
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
-    public double getlog() {
+    public double getLog() {
         return log;
     }
-    public void setlog(double log) {
+
+    public void setLog(double log) {
         this.log = log;
     }
 
-    public String getaddress() {
+    public String getAddress() {
         return address;
     }
-    public void setaddress(String address) {
+
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getImageURL() { return imageURL; }
-    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 }
