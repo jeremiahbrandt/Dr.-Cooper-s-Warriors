@@ -22,11 +22,11 @@ public class EventParticipants {
     private Integer event_participant_id;
 
     @ManyToOne(fetch =  FetchType.LAZY)
-    @JoinColumn(name="eventparticipantevent_id", nullable = false)
+    @JoinColumn(name="event_id", nullable = false)
     private Event event;
 
     @ManyToOne(fetch =  FetchType.LAZY)
-    @JoinColumn(name="eventparticipantuser_id", nullable = false)
+    @JoinColumn(name="user_id", nullable = false)
     private User user;
 
 
