@@ -63,8 +63,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/api/*")
+                .antMatchers(HttpMethod.GET,"/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/api/**")
+                .permitAll()
+                .and()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST,"/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/api/**")
                 .permitAll()
                 .anyRequest().authenticated();
+
     }
 }

@@ -41,7 +41,7 @@ function App() {
             <Route path='/Events' element={<Events />} />
             <Route path='/Register' element={<Registration />} />
             <Route path='/Account' element={<AccountPage />} />
-            <Route path='/GroupPage' element={<GroupPage />} />
+            <Route path='/Group' element={<GroupPage />} />
           </Routes>
           <Footer />
         </Router>
