@@ -1,13 +1,11 @@
 package com.drcooperswarriors.codeathon.model;
 
-import com.drcooperswarriors.codeathon.repository.EventRepository;
-import com.drcooperswarriors.codeathon.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Optional;
 
 @Entity
+@Data
 @Table(name = "eventparticipants")
 public class EventParticipants {
 //    @Autowired
@@ -31,7 +29,7 @@ public class EventParticipants {
 
 
 
-
+    /*
     public Integer getEvent_participant_id() {
         return event_participant_id;
     }
@@ -39,6 +37,7 @@ public class EventParticipants {
     public void setEvent_participant_id(Integer event_participant_id) {
         this.event_participant_id = event_participant_id;
     }
+
 
     public Event getEvent() {
         return event;
@@ -55,4 +54,6 @@ public class EventParticipants {
     public void setUser(User user) {
         this.user = user;
     }
+
+    */
 }

@@ -2,14 +2,11 @@ package com.drcooperswarriors.codeathon.controller;
 
 import com.drcooperswarriors.codeathon.model.*;
 import com.drcooperswarriors.codeathon.repository.*;
-import com.drcooperswarriors.codeathon.security.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -26,6 +23,13 @@ public class UserController {
 
     @Autowired
     private MemberRepository memberRepository;
+
+    @Autowired
+    private EventRepository eventRepository;
+
+    @Autowired
+    private EventRepo eventRepo;
+
 
 
     @GetMapping("/api/user")
@@ -56,16 +60,23 @@ public class UserController {
     public ResponseEntity getUserInfo(@RequestParam(required = true) Integer id){
         User user = userRepository.getUserById(id);
 
+
+
         if(user != null) {
-            List<Event> events = eventParticipantsRepository.getEventsByUsername(user.getUser_id());
-            List<Group> groups = eventParticipantsRepository.getGroupsByUsername(user.getUser_id());
+
+            List<Event> events = eventRepo.getEventsByUsername(user.getUser_id());
+            List<Group> groups = eventRepo.getGroupsByUsername(user.getUser_id());
+            //List<Event> events = eventParticipantsRepository.getEventsByUsername(user.getUser_id());
+            //List<Group> groups = eventParticipantsRepository.getGroupsByUsername(user.getUser_id());
             UserResponse ur = new UserResponse(user, events, groups );
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(ur);
         } else {
             return ResponseEntity.notFound().build();
         }
 
     }
+
+
 
 
     // @GetMapping( "/api/users")

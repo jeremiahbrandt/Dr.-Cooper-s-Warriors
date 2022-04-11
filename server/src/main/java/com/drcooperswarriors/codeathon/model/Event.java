@@ -1,11 +1,17 @@
 package com.drcooperswarriors.codeathon.model;
 
 import com.drcooperswarriors.codeathon.security.Provider;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "events")
 public class Event {
 
@@ -36,6 +42,8 @@ public class Event {
     @JoinColumn(name="group_id", nullable = false)
     private Group group;
 
+
+    /*
     public String getImageURL() {
         return imageURL;
     }
@@ -99,4 +107,6 @@ public class Event {
     public void setGroup(Group group) {
         this.group = group;
     }
+    */
+
 }
