@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import {useSearchParams} from "react-router-dom";
 export default function AccountPage(props) {
-    const token = sessionStorage.getItem("token");
-    console.log(token)
+
     let[searchParams, setSearchParams] = useSearchParams();
     const [userInfo, setUserInfo] = useState();
 
