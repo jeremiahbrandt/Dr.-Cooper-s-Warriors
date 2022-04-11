@@ -91,7 +91,7 @@ public class CreateEventRequest {
         event.setEvent_id(this.eventId);
 
         User user = userRepository.findById(this.userId).get();
-        event.setUser(user);
+//        event.setUser(user);
 
         Group group = groupRepository.findById(this.groupId).get();
         event.setGroup(group);
