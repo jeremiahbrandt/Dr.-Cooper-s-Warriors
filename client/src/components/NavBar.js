@@ -16,7 +16,7 @@ const NavBar = () => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand style={{color:  "#0b76b8", fontWeight: 600, fontSize: 24}} as={Link} to="/">CoolApp</Navbar.Brand>
+          <Navbar.Brand style={{color:  "#0b76b8", fontWeight: 600, fontSize: 24}} as={Link} to="/">Rendevoo</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" style={{marginRight: 30}}>
             <Nav className="ms-auto">

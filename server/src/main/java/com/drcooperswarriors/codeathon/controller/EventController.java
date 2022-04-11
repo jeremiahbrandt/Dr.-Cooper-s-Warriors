@@ -32,15 +32,15 @@ public class EventController {
     @GetMapping("/event")
     public List<Event> getEvents() { return eventRepository.findAll(); }
 
-    @PostMapping("/events")
-    @CrossOrigin(origins = {"http://localhost:3000"})
-    @ResponseBody
-    Event newEvent(@RequestBody CreateEventRequest request) {
-        request.setGroupRepository(groupRepository);
-        request.setUserRepository(userRepository);
-        Event newEvent = request.getEvent();
-        return eventRepository.save(newEvent);
-    }
+//    @PostMapping("/events")
+//    @CrossOrigin(origins = {"http://localhost:3000"})
+//    @ResponseBody
+//    Event newEvent(@RequestBody CreateEventRequest request) {
+//        request.setGroupRepository(groupRepository);
+//        request.setUserRepository(userRepository);
+////        Event newEvent = request.getEvent();
+////        return eventRepository.save(newEvent);
+//    }
 
     @PostMapping("/register")
     @CrossOrigin(origins = {"http://localhost:3000"})

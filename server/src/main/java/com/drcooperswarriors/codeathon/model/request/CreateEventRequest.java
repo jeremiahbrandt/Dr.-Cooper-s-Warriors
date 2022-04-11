@@ -79,23 +79,23 @@ public class CreateEventRequest {
         this.date = date;
     }
 
-    public Event getEvent() {
-        Event event = new Event();
-
-        event.setLat(this.lat);
-        event.setLog(this.log);
-        event.setAddress(this.address);
-        event.setName(this.name);
-        event.setImageURL(this.imageURL);
-        event.setDate(this.date);
-        event.setEvent_id(this.eventId);
-
-        User user = userRepository.findById(this.userId).get();
-//        event.setUser(user);
-
-        Group group = groupRepository.findById(this.groupId).get();
-        event.setGroup(group);
-
-        return event;
-    }
+//    public Event getEvent() {
+//        Event event = new Event();
+//
+//        event.setLat(this.lat);
+//        event.setLog(this.log);
+//        event.setAddress(this.address);
+//        event.setName(this.name);
+//        event.setImageURL(this.imageURL);
+//        event.setDate(this.date);
+//        event.setEvent_id(this.eventId);
+//
+//        User user = userRepository.findById(this.userId).get();
+////        event.setUser(user);
+//
+//        Group group = groupRepository.findById(this.groupId).get();
+//        event.setGroup(group);
+//
+//        return event;
+//    }
 }
