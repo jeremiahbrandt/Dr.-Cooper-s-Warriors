@@ -33,13 +33,17 @@ public class EventController {
     public List<Event> getEvents() { return eventRepository.findAll(); }
 
     @PostMapping("/events")
+    @CrossOrigin(origins = {"http://localhost:3000"})
+    @ResponseBody
     Event newEvent(@RequestBody CreateEventRequest request) {
         request.setGroupRepository(groupRepository);
-        return eventRepository.save(request.getEvent());
+        request.setUserRepository(userRepository);
+        Event newEvent = request.getEvent();
+        return eventRepository.save(newEvent);
     }
 
     @PostMapping("/register")
-    @CrossOrigin
+    @CrossOrigin(origins = {"http://localhost:3000"})
     @ResponseBody
     public ResponseEntity<Object> registerForEvent(@RequestParam(required = true) int eventId){
         // TODO extract userId from token in Authorization header
@@ -55,7 +59,6 @@ public class EventController {
     @GetMapping("/getEventsByUser")
     public List<User> getEventsByUser(@RequestParam(required = true) Integer id){
         return eventRepository.getEventsByUsername(id);
-
     }
 
 //    @GetMapping("/api/user")

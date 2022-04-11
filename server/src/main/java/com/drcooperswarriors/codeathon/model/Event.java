@@ -17,7 +17,7 @@ public class Event {
 
     @Id
     @Column(name = "event_id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+//    @GeneratedValue(strategy=GenerationType.AUTO)
     private int event_id;
 
     @Column(name = "lat")

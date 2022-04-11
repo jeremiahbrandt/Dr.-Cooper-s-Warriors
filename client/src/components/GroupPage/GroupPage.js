@@ -5,29 +5,37 @@ import Posts from './Posts'
 import styled from "styled-components"
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { useSearchParams} from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import "./CreateEvent.css";
 export default function GroupPage(props) {
+    let [searchParams, setSearchParams] = useSearchParams();
+    const [group, setGroup] = useState()
 
-    let[searchParams, setSearchParams] = useSearchParams();
-    const [group, setGroup] = useState();
+    useEffect(() => {
+        getAllGroups()
+    }, [])
+
+    const [show, setShow] = useState(false);
+    const [showGroup, setShowGroup] = useState(false);
+    const [event, setEvent] = useState({
+        date: new Date(),
+        time: undefined,
+        lat: 0,
+        log: 0,
+        address: "",
+        name: "",
+        description: "",
+        imageUrl: "",
+        groupId: undefined
+    });
 
     const getAllGroups = async () => {
         const id = searchParams.get("id")
         console.log(id)
         const groups = (await axios.get(`http://localhost:8080/api/group?id=${id}`)).data
-        console.log(groups);
         setGroup(groups)
+        setEvent({ ...event, groupId: groups.group_id })
     }
-    
-
-    useEffect(()=>{
-        getAllGroups()
-    },[])
-
-    const [show, setShow] = useState(false);
-    const [showGroup, setShowGroup] = useState(false);
-    const [modalEvent, setModalEvent] = useState();
 
     const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
     function handleShowCreateGroupModal() {
@@ -50,8 +58,33 @@ export default function GroupPage(props) {
     function handleGroupClose() {
         setShowGroup(false)
     }
-    return (
 
+    async function handleCreateEvent() {
+        const { name, description, lat, log, groupId, date, time, address } = event
+        const eventId = getRandomInt(1, 100000)
+        // console.log("name", name, "description", description, "lat", lat, "log", log, "groupId", groupId, "date", date, "time", time, "address", address)
+        const json = JSON.stringify({
+            name,
+            lat,
+            log,
+            address,
+            imageUrl: "",
+            groupId,
+            date,
+            userId: 1,
+            description,
+            eventId
+        });
+        const res = await axios.post('http://localhost:8080/api/events', json, {
+            headers: {
+                // Overwrite Axios's automatically set Content-Type
+                'Content-Type': 'application/json'
+            }
+        });
+        setShow(false)
+    }
+
+    return (
         <Container>
             <Flex>
                 <GroupName as="h1">{group?.group_name}</GroupName>
@@ -70,37 +103,68 @@ export default function GroupPage(props) {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <label className="event-name-label"><b>Group Name:</b>
-                            <input className="group-name-input" type="text" />
+                        <label className="event-name-label"><b>Event Name:</b>
+                            <input
+                                className="group-name-input"
+                                type="text"
+                                value={event.name}
+                                onChange={(e) => setEvent({ ...event, name: e.target.value })}
+                            />
                         </label>
                         <div className="event-address">
                             <label className="event-address-label"><b>Event Address:</b></label>
-                            <textarea className="event-address-text"
+                            <textarea
+                                className="event-address-text"
+                                value={event.address}
+                                onChange={(e) => setEvent({ ...event, address: e.target.value })}
                                 rows="2"
                             />
                         </div>
-                        <label className="event-date-label"><b>Group Date:</b>
-                            <input className="group-date-input" type="Date" />
+                        <label className="event-date-label"><b>Event Date:</b>
+                            <input
+                                className="group-date-input"
+                                type="Date"
+                                value={event.date}
+                                onChange={(e) => setEvent({ ...event, date: e.target.value })}
+                            />
                         </label>
                         <label className="event-time-label"><b>Group Time:</b>
-                            <input className="group-time-input" type="time" />
+                            <input
+                                className="group-time-input"
+                                type="time"
+                                value={event.time}
+                                onChange={(e) => setEvent({ ...event, time: e.target.value })}
+                            />
                         </label>
                         <div className="event-description">
                             <label className="event-description-label"><b>Group Description:</b></label>
-                            <textarea className="event-description-text"
+                            <textarea
+                                className="event-description-text"
                                 rows="2"
+                                value={event.description}
+                                onChange={(e) => setEvent({ ...event, description: e.target.value })}
                             />
                         </div>
                         <label className="event-lat-label"><b>Area Latitude:</b>
-                            <input className="group-lat-input" type="text" />
+                            <input
+                                className="group-lat-input"
+                                type="text"
+                                value={event.lat}
+                                onChange={(e) => setEvent({ ...event, lat: e.target.value })}
+                            />
                         </label>
-                        <label className="event-long-label"><b>Area Logitude: </b>
-                            <input className="group-long-input" type="text" />
+                        <label className="event-long-label"><b>Area Longitude:</b>
+                            <input
+                                className="group-long-input"
+                                type="text"
+                                value={event.log}
+                                onChange={(e) => setEvent({ ...event, log: e.target.value })}
+                            />
                         </label>
                     </Modal.Body>
                     <Modal.Footer className="d-flex justify-content-between">
-                        <Button variant="success" onClick={handleClose}>
-                            Cancel Reservation
+                        <Button variant="success" onClick={handleCreateEvent}>
+                            Create Event
                         </Button>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
@@ -182,3 +246,9 @@ const tempPosts = [
     }
 
 ]
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

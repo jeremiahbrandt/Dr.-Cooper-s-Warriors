@@ -2,10 +2,13 @@ package com.drcooperswarriors.codeathon.model.request;
 
 import com.drcooperswarriors.codeathon.model.Event;
 import com.drcooperswarriors.codeathon.model.Group;
+import com.drcooperswarriors.codeathon.model.User;
 import com.drcooperswarriors.codeathon.repository.CategoriesRepository;
 import com.drcooperswarriors.codeathon.repository.GroupRepository;
+import com.drcooperswarriors.codeathon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.Entity;
 import java.util.Date;
 
 public class CreateEventRequest {
@@ -15,6 +18,12 @@ public class CreateEventRequest {
 
     private GroupRepository groupRepository;
 
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    private UserRepository userRepository;
+
     private double lat;
     private double log;
     private String address;
@@ -22,6 +31,25 @@ public class CreateEventRequest {
     private String imageURL;
     private int groupId;
     private Date date;
+    private int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
+
+    private int eventId;
 
     public void setLat(double lat) {
         this.lat = lat;
@@ -60,8 +88,12 @@ public class CreateEventRequest {
         event.setName(this.name);
         event.setImageURL(this.imageURL);
         event.setDate(this.date);
+        event.setEvent_id(this.eventId);
 
-        Group group = groupRepository.getById(this.groupId);
+        User user = userRepository.findById(this.userId).get();
+        event.setUser(user);
+
+        Group group = groupRepository.findById(this.groupId).get();
         event.setGroup(group);
 
         return event;
