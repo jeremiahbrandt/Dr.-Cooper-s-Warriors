@@ -63,7 +63,7 @@ export default function AccountPage(props) {
     return (
         <Container>
             <Row>
-                <h1>Welcome back {user.firstName}!</h1>
+                <h1>Welcome back!</h1>
             </Row>
             <Row>
                 <Col>
