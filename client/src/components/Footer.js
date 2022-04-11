@@ -11,7 +11,7 @@ const Footer = () => {
                     <Row>
                         <Col>
                             <div className="foot-col" >
-                                Terms&Conditions
+                                Terms & Conditions
                             </div>
                         </Col>
                         <Col>
@@ -21,7 +21,7 @@ const Footer = () => {
                         </Col>
                         <Col>
                             <div className="foot-col">
-                                © 2022 Dr. Coopers Warriors inc
+                                © 2022 Dr. Coopers Warriors Inc.
                             </div>
                         </Col>
                     </Row>

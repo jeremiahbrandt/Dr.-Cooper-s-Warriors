@@ -6,7 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -38,9 +40,12 @@ public class Event {
     @Column(name = "date")
     private Date date;
 //
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable = false)
-    private User user;
+//@OneToMany(
+//        cascade = CascadeType.ALL,
+//        orphanRemoval = true
+//)
+//private List<PostComment> comments = new ArrayList<>();
+
 
     @ManyToOne
     @JoinColumn(name="group_id", nullable = false)

@@ -1,4 +1,4 @@
-INSERT INTO events(event_id, address, date, lat, log, name, group_id)
+INSERT INTO events(event_id, address, date, lat, log, name, group_id, user_id)
 VALUES (
         1,
         "Blue Valley Park Rd E",
@@ -6,6 +6,7 @@ VALUES (
         39.081415,
         -94.509650,
         "Who Who's Watching",
+        1,
         1
     ),
     (
@@ -15,7 +16,8 @@ VALUES (
         39.050584,
         -94581790,
         "March of the Walkers",
-        2
+        2,
+        1
     ),
     (
         3,
@@ -24,6 +26,7 @@ VALUES (
         39.094037,
         -94.588452,
         "Ton of Chess",
+        1,
         3
     ),
     (
@@ -33,7 +36,8 @@ VALUES (
         39.116008,
         -94.643369,
         "Ruth's Knitting Night",
-        4
+        4,
+        2
     ),
     (
         5,
@@ -42,7 +46,8 @@ VALUES (
         39.117640,
         -94.590790,
         "Rock Climbing Extreme",
-        5
+        5,
+        2
     ),
     (
         6,
@@ -51,7 +56,8 @@ VALUES (
         39.103762,
         -94.576278,
         "The Swayze Experience",
-        6
+        6,
+        2
     ),
     (
         7,
@@ -60,7 +66,8 @@ VALUES (
         39.084426,
         -94.585519,
         "Communities Planting Event",
-        7
+        7,
+        2
     ),
     (
         8,
@@ -69,7 +76,8 @@ VALUES (
         39.057255,
         -94.610676,
         "Dungeon's in the KU",
-        8
+        8,
+        2
     ),
     (
         9,
@@ -78,7 +86,8 @@ VALUES (
         "39.08283",
         "-94.54712",
         "Lucile H. Bluford Branch",
-        9
+        9,
+        2
     ),
     (
         10,
@@ -87,7 +96,8 @@ VALUES (
         "39.01568",
         "-94.76276",
         "Shawnee",
-        10
+        10,
+        3
     ),
     (
         11,
@@ -96,7 +106,8 @@ VALUES (
         "39.08854",
         "-94.55362",
         "Blue Park",
-        11
+        11,
+        3
     ),
     (
         12,
@@ -105,7 +116,8 @@ VALUES (
         38.79151,
         -94.75569,
         "Wolf Creek",
-        12
+        12,
+        3
     ),
     (
         13,
@@ -114,5 +126,6 @@ VALUES (
         "38.98269",
         "-94.67201",
         "Tom Park",
-        13
+        13,
+        3
     );

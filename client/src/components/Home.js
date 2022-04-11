@@ -27,7 +27,7 @@ function Home() {
         </Row>
       </Container>
       <div>
-        <button className="home-button"><Nav.Link as={Link} to="/Register">Get Started</Nav.Link></button>
+        <button className="home-button"><Nav.Link style={{fontSize: 36}} as={Link} to="/Register">Get Started</Nav.Link></button>
       </div>
     </div>
   );

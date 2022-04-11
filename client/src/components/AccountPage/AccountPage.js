@@ -1,36 +1,37 @@
 import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import "./Account.css";
 import CreateGroupModal from "../CreateGroupModal";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
-export default function AccountPage() {
+import {useSearchParams} from "react-router-dom";
+export default function AccountPage(props) {
 
     let[searchParams, setSearchParams] = useSearchParams();
-    const [events, setEvents] = useState();
+    const [userInfo, setUserInfo] = useState();
 
-    const getAllEvents = async () => {
+    const getAllInformation = async () => {
+
         const id = searchParams.get("id")
-        console.log(id)
-        const groups = (await axios.get(`http://localhost:8080/api/events?id=${id}`)).data
-        console.log(events);
-        setGroup(events)
+        console.log(id);
+        
     }
+
     
 
     useEffect(()=>{
-        getAllGroups()
+        getAllInformation();
     },[])
 
-    // const [user, setUser] = useState(temporaryUser)
-    // const [events, setEvents] = useState(temporaryEvents);
-    // const [groups, setGroups] = useState(temporaryGroups);
+    const [user, setUser] = useState(temporaryUser);
+    const [events, setEvents] = useState(temporaryEvents);
+    const [groups, setGroups] = useState(temporaryGroups);
 
-    // const [show, setShow] = useState(false);
-    // const [showGroup, setShowGroup] = useState(false);
-    // const [modalEvent, setModalEvent] = useState();
+    const [show, setShow] = useState(false);
+    const [showGroup, setShowGroup] = useState(false);
+    const [modalEvent, setModalEvent] = useState();
 
     const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
     function handleShowCreateGroupModal() {
@@ -62,7 +63,7 @@ export default function AccountPage() {
     return (
         <Container>
             <Row>
-                <h1>Welcome back {user.firstName}!</h1>
+                <h1>Welcome back!</h1>
             </Row>
             <Row>
                 <Col>
@@ -168,56 +169,24 @@ export default function AccountPage() {
 }
 
 const temporaryGroups = [
-    'Group 1',
-    'Group 2',
-    'Group 3',
-    'Group 4',
-    'Group 5',
-    'Group 6',
-    'Group 7',
-    'Group 8',
-    'Group 9',
-    'Group 10',
-    'Group 11',
-    'Group 12',
-    'Group 13',
-    'Group 14',
-    'Group 15',
-    'Group 16',
-    'Group 17',
-    'Group 18',
+    'Knitting',
+    'Speed Walking',
+    'Bird Watching',
+    'Bike Club'
+ 
 ]
 
 const temporaryEvents = [
-    'Event 1',
-    'Event 2',
-    'Event 3',
-    'Event 4',
-    'Event 5',
-    'Event 6',
-    'Event 7',
-    'Event 8',
-    'Event 9',
-    'Event 10',
-    'Event 11',
-    'Event 12',
-    'Event 13',
-    'Event 14',
-    'Event 15',
-    'Event 16',
-    'Event 17',
-    'Event 18',
-    'Event 19',
-    'Event 20',
-    'Event 21',
-    'Event 22',
-    'Event 23',
-    'Event 24',
-    'Event 25',
-    'Event 26',
-    'Event 27',
-    'Event 28',
-    'Event 29',
+    'DND Night w/ Nathan',
+    'Zoomba Granny Night',
+    'Fruit Snack Connoissuer Night',
+    'Coffee with the Boys',
+    'Algorithm Club w/ Prof. Cooper',
+    'Emboridery Club #22',
+    'Aarons Corn Convention',
+    'New iPhone midnight release',
+    'Hydration Nation',
+    'KC Hike Club',
 ]
 
 const temporaryUser = {
