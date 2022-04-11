@@ -8,16 +8,15 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import {useSearchParams} from "react-router-dom";
 export default function AccountPage(props) {
-    const token = sessionStorage.getItem("token");
-    console.log(token)
+
     let[searchParams, setSearchParams] = useSearchParams();
     const [userInfo, setUserInfo] = useState();
 
     const getAllInformation = async () => {
-        if(token != null){
+
         const id = searchParams.get("id")
         console.log(id);
-        }
+        
     }
 
     
@@ -178,35 +177,16 @@ const temporaryGroups = [
 ]
 
 const temporaryEvents = [
-    'Event 1',
-    'Event 2',
-    'Event 3',
-    'Event 4',
-    'Event 5',
-    'Event 6',
-    'Event 7',
-    'Event 8',
-    'Event 9',
-    'Event 10',
-    'Event 11',
-    'Event 12',
-    'Event 13',
-    'Event 14',
-    'Event 15',
-    'Event 16',
-    'Event 17',
-    'Event 18',
-    'Event 19',
-    'Event 20',
-    'Event 21',
-    'Event 22',
-    'Event 23',
-    'Event 24',
-    'Event 25',
-    'Event 26',
-    'Event 27',
-    'Event 28',
-    'Event 29',
+    'DND Night w/ Nathan',
+    'Zoomba Granny Night',
+    'Fruit Snack Connoissuer Night',
+    'Coffee with the Boys',
+    'Algorithm Club w/ Prof. Cooper',
+    'Emboridery Club #22',
+    'Aarons Corn Convention',
+    'New iPhone midnight release',
+    'Hydration Nation',
+    'KC Hike Club',
 ]
 
 const temporaryUser = {

@@ -29,7 +29,7 @@ public class EventParticipants {
 
 
 
-    /*
+
     public Integer getEvent_participant_id() {
         return event_participant_id;
     }
@@ -55,5 +55,4 @@ public class EventParticipants {
         this.user = user;
     }
 
-    */
 }
