@@ -41,5 +41,5 @@ Run the appication, it will automatically build the tables for you.
 
 ### Demo Video
 
-
+https://www.youtube.com/watch?v=wzqZNDu5f94
 
