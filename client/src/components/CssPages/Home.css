@@ -12,15 +12,14 @@
     border-radius: .75em .75em .75em .75em;
 }
 .text-box{
-    margin: 0% 0% 5% 0%;
+margin: 0 auto;
 }
 .text-box h1{
-    margin: 5% 0% 10% 0%;
+    margin-top: 7.5%;
 }
 .text-box p{
-    text-align: left;
-    color: black;
-    margin: 5% 25% 0% 2%;
+    margin-top: 15%;
+    font-size: 1.2em;
 }
 .img-box{
     background-color:#BDDFEB;
@@ -28,9 +27,9 @@
 }
 .home-button{
     margin: 2% 0% 5% 0%;
-    width: 40%;
-    height: 8rem;
-    background-color:#BDDFEB;
+    width: 35%;
+    height: 6em;
+    background-color:#1DA1F2;
     box-shadow: 0 0 12px #bdbdbd !important;
     border: none !important;
     border-radius: .5rem !important;

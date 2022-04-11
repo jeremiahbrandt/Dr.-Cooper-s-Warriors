@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { useSearchParams} from "react-router-dom";
 import "./CreateEvent.css";
 export default function GroupPage(props) {
+    const img_urls = ["physical.jpg", "leisure.jpg","arts_and_crafts.jpg", "games.jpg", "nature.jpg"]
 
     let[searchParams, setSearchParams] = useSearchParams();
     const [group, setGroup] = useState();
@@ -56,7 +57,7 @@ export default function GroupPage(props) {
             <Flex>
                 <GroupName as="h1">{group?.group_name}</GroupName>
                 <Image>
-                    <img src="rex.jpg" />
+                    <img src={img_urls[parseInt(group?.category.cat_id) -1]} />
                 </Image>
             </Flex>
             <Bio as="p">{group?.group_description}
