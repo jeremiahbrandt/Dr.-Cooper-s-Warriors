@@ -7,13 +7,30 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 export default function AccountPage() {
-    const [user, setUser] = useState(temporaryUser)
-    const [events, setEvents] = useState(temporaryEvents);
-    const [groups, setGroups] = useState(temporaryGroups);
 
-    const [show, setShow] = useState(false);
-    const [showGroup, setShowGroup] = useState(false);
-    const [modalEvent, setModalEvent] = useState();
+    let[searchParams, setSearchParams] = useSearchParams();
+    const [events, setEvents] = useState();
+
+    const getAllEvents = async () => {
+        const id = searchParams.get("id")
+        console.log(id)
+        const groups = (await axios.get(`http://localhost:8080/api/events?id=${id}`)).data
+        console.log(events);
+        setGroup(events)
+    }
+    
+
+    useEffect(()=>{
+        getAllGroups()
+    },[])
+
+    // const [user, setUser] = useState(temporaryUser)
+    // const [events, setEvents] = useState(temporaryEvents);
+    // const [groups, setGroups] = useState(temporaryGroups);
+
+    // const [show, setShow] = useState(false);
+    // const [showGroup, setShowGroup] = useState(false);
+    // const [modalEvent, setModalEvent] = useState();
 
     const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
     function handleShowCreateGroupModal() {
