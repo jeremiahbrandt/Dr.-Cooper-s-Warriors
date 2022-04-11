@@ -1,36 +1,38 @@
 import { Col, Row, Container, Card, Button, Modal, ListGroupItem, ListGroup } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import "./Account.css";
 import CreateGroupModal from "../CreateGroupModal";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
-export default function AccountPage() {
-
+import {useSearchParams} from "react-router-dom";
+export default function AccountPage(props) {
+    const token = sessionStorage.getItem("token");
+    console.log(token)
     let[searchParams, setSearchParams] = useSearchParams();
-    const [events, setEvents] = useState();
+    const [userInfo, setUserInfo] = useState();
 
-    const getAllEvents = async () => {
+    const getAllInformation = async () => {
+        if(token != null){
         const id = searchParams.get("id")
-        console.log(id)
-        const groups = (await axios.get(`http://localhost:8080/api/events?id=${id}`)).data
-        console.log(events);
-        setGroup(events)
+        console.log(id);
+        }
     }
+
     
 
     useEffect(()=>{
-        getAllGroups()
+        getAllInformation();
     },[])
 
-    // const [user, setUser] = useState(temporaryUser)
-    // const [events, setEvents] = useState(temporaryEvents);
-    // const [groups, setGroups] = useState(temporaryGroups);
+    const [user, setUser] = useState(temporaryUser);
+    const [events, setEvents] = useState(temporaryEvents);
+    const [groups, setGroups] = useState(temporaryGroups);
 
-    // const [show, setShow] = useState(false);
-    // const [showGroup, setShowGroup] = useState(false);
-    // const [modalEvent, setModalEvent] = useState();
+    const [show, setShow] = useState(false);
+    const [showGroup, setShowGroup] = useState(false);
+    const [modalEvent, setModalEvent] = useState();
 
     const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
     function handleShowCreateGroupModal() {
