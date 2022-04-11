@@ -2,6 +2,7 @@ package com.drcooperswarriors.codeathon.controller;
 
 import com.drcooperswarriors.codeathon.model.Event;
 import com.drcooperswarriors.codeathon.model.Group;
+import com.drcooperswarriors.codeathon.model.User;
 import com.drcooperswarriors.codeathon.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +38,12 @@ public class GroupController {
     @PostMapping("/api/event")
     Group newGroup(@RequestBody Group group) {
         return groupRepository.save(group);
+    }
+
+    @GetMapping("/api/getGroupsByUser")
+    public List<User> getGroupsByUser(@RequestParam(required = true) Integer id){
+        return groupRepository.getGroupsByUserId(id);
+
     }
 
 }

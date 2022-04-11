@@ -14,10 +14,11 @@ function Home() {
         <Row className="row-box">
           <Col className="text-box">
             <div >
-              <h1>Site Info</h1>
-              <p>Recenly we have seen more mask restrictions being lifted and people being ok to be outside again, but still people
-                still strugle to get back to a social norm and reconnect with people. "Cool App" can help people find groups or hobbies to join around
-                local city. Make an account to start looking for activites or create a post to find people to join your group</p>
+              <h1>Looking for friends...</h1>
+              <p>Have you spent the last 2 years inside? Since 2020 lives all around the World were changed. 
+              With things finally going back to normal we are able to socialize in person again! But do many of us even remember how to do that?!
+              With CoolApp you can finally enjoy meeting with people to participate in your favorite and new hobbies!
+              </p>
             </div>
           </Col>
           <Col className="img-box"> 

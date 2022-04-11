@@ -52,5 +52,21 @@ public class EventController {
         eventParticipantsRepository.save(eventParticipants);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+    @GetMapping("/getEventsByUser")
+    public List<User> getEventsByUser(@RequestParam(required = true) Integer id){
+        return eventRepository.getEventsByUsername(id);
 
+    }
+
+//    @GetMapping("/api/user")
+//    public ResponseEntity getAllExamples(@RequestParam(required = true) Integer id) {
+//        User user = userRepository.getUserById(id);
+//
+//        if(user != null) {
+//            return ResponseEntity.ok(user);
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+//
+//    }
 }
